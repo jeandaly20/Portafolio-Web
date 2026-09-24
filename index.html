@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jean Carlos Suárez — Ingeniería de Software | Portafolio</title>
+    <meta
+      name="description"
+      content="Portafolio de Jean Carlos Suárez, estudiante de Ingeniería de Software de octavo semestre en la Universidad Estatal de Milagro (UNEMI). Proyectos, habilidades técnicas y contacto."
+    />
+    <meta name="author" content="Jean Carlos Suárez" />
+    <meta name="theme-color" content="#4f46e5" />
+
+    <!-- Open Graph: vista previa al compartir el enlace -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Jean Carlos Suárez — Portafolio" />
+    <meta
+      property="og:description"
+      content="Estudiante de Ingeniería de Software en la UNEMI. Desarrollo web full stack con foco en frontend."
+    />
+    <meta property="og:image" content="assets/img/jean-suarez.webp" />
+
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Hojas de estilo: tokens → base → componentes → layout -->
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+
+    <!-- Aplica el tema guardado antes de pintar, para evitar parpadeo -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("portafolio-tema");
+          if (saved === "dark" || saved === "light") {
+            document.documentElement.setAttribute("data-theme", saved);
+          } else {
+            document.documentElement.removeAttribute("data-theme");
+          }
+        } catch (error) {
+          /* localStorage no disponible: se usa el tema del sistema */
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+    <!-- =====================================================
+         HEADER + NAVEGACIÓN
+         ===================================================== -->
+    <header class="site-header">
+      <div class="container">
+        <div class="navbar">
+          <a class="navbar__brand" href="#inicio">
+            <span class="brand-mark" aria-hidden="true">JS</span>
+            <span>Jean Suárez</span>
+          </a>
+
+          <nav class="navbar__nav" id="nav-principal" aria-label="Navegación principal">
+            <ul class="navbar__menu">
+              <li><a class="navbar__link" href="#inicio">Inicio</a></li>
+              <li><a class="navbar__link" href="#sobre-mi">Sobre mí</a></li>
+              <li><a class="navbar__link" href="#skills">Skills</a></li>
+              <li><a class="navbar__link" href="#proyectos">Proyectos</a></li>
+              <li><a class="navbar__link" href="#contacto">Contacto</a></li>
+            </ul>
+          </nav>
+
+          <div class="navbar__actions">
+            <button
+              class="btn-icon"
+              type="button"
+              id="theme-toggle"
+              aria-label="Cambiar entre tema claro y oscuro"
+              aria-pressed="false"
+            >
+              <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+              <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+              </svg>
+            </button>
+
+            <button
+              class="btn-icon navbar__toggle"
+              type="button"
+              id="nav-toggle"
+              aria-label="Abrir menú de navegación"
+              aria-expanded="false"
+              aria-controls="nav-principal"
+            >
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                <path d="M3 6h18M3 12h18M3 18h18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <!-- =====================================================
+           1. INICIO / PRESENTACIÓN
+           ===================================================== -->
+      <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+        <div class="container">
+          <div class="hero__inner">
+            <div class="hero__content">
+              <p class="hero__status">Disponible para prácticas y proyectos</p>
+
+              <h1 class="hero__title" id="hero-titulo">Jean Carlos Suárez</h1>
+              <p class="hero__role">Estudiante de Ingeniería de Software · Desarrollo Web Full Stack</p>
+
+              <p class="hero__text">
+                Octavo semestre de Ingeniería de Software. Construyo aplicaciones web con
+                JavaScript, React y APIs REST, cuidando la estructura del código, la
+                accesibilidad y una experiencia de usuario limpia.
+              </p>
+
+              <div class="hero__actions">
+                <a class="btn btn--primary" href="#proyectos">
+                  Ver proyectos
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </a>
+                <a class="btn btn--secondary" href="#contacto">Contactarme</a>
+              </div>
+
+              <ul class="social-list">
+                <li>
+                  <a class="btn-icon" href="https://github.com/jeandaly20" target="_blank" rel="noopener" aria-label="Perfil de GitHub (se abre en una pestaña nueva)">
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.2c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.4 1.24-3.24-.12-.3-.54-1.53.12-3.18 0 0 1-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.24 0 4.63-2.81 5.65-5.49 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 12 .5z" />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a class="btn-icon" href="https://www.linkedin.com/in/jean-suarez-acevedo-46091a190" target="_blank" rel="noopener" aria-label="Perfil de LinkedIn (se abre en una pestaña nueva)">
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <figure class="hero__figure">
+              <img
+                class="hero__avatar"
+                src="assets/img/jean-suarez.webp"
+                alt="Retrato de Jean Carlos Suárez, estudiante de Ingeniería de Software"
+                width="1252"
+                height="1252"
+                fetchpriority="high"
+              />
+              <figcaption>Jean Carlos Suárez, Naranjito · Ecuador</figcaption>
+            </figure>
+          </div>
+
+          <!-- Métricas rápidas -->
+          <dl class="stats">
+            <div class="stats__item">
+              <dt class="stats__label">Semestre en curso</dt>
+              <dd><span class="stats__value">8.º</span></dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__label">Proyectos publicados</dt>
+              <dd><span class="stats__value">4</span></dd>
+            </div>
+            <div class="stats__item">
+              <dt class="stats__label">Años programando</dt>
+              <dd><span class="stats__value">3+</span></dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           2. SOBRE MÍ
+           ===================================================== -->
+      <section class="section section--alt" id="sobre-mi" aria-labelledby="sobre-mi-titulo">
+        <div class="container">
+          <header class="section__header">
+            <span class="section__eyebrow">01 — Perfil</span>
+            <h2 id="sobre-mi-titulo">Sobre mí</h2>
+          </header>
+
+          <div class="about">
+            <div class="about__content">
+              <p>
+                Soy <strong>Jean Carlos Suárez</strong>, estudiante de octavo semestre de
+                Ingeniería de Software en la <strong>Universidad Estatal de Milagro (UNEMI)</strong>.
+                Me interesa el desarrollo web full stack, con una inclinación clara hacia el
+                <strong>frontend</strong>: interfaces ordenadas, accesibles y fáciles de mantener.
+              </p>
+              <p>
+                En la universidad he trabajado con Java, Python y JavaScript, tanto en
+                aplicaciones de escritorio como en servicios web. Fuera de clase dedico tiempo a
+                practicar con React, Node.js y bases de datos relacionales, y a entender cómo se
+                organiza un proyecto real: control de versiones, revisión de código y despliegue.
+              </p>
+              <p>
+                Mi objetivo a corto plazo es hacer prácticas profesionales en un equipo de
+                desarrollo donde pueda aportar en la construcción de interfaces y aprender de
+                perfiles con más experiencia.
+              </p>
+
+              <h3>Formación e hitos académicos</h3>
+              <ol class="timeline">
+                <li>
+                  <article>
+                    <time datetime="2022">2022</time>
+                    <h4>Ingeniería de Software · Universidad Estatal de Milagro (UNEMI)</h4>
+                    <p class="text-muted">
+                      Inicié la carrera en 2022 y actualmente curso el octavo semestre. Áreas de
+                      mayor interés: desarrollo web, arquitectura de software, bases de datos e
+                      ingeniería de requisitos.
+                    </p>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <time datetime="2024">2024</time>
+                    <h4>Formación complementaria</h4>
+                    <p class="text-muted">
+                      Cursos autodidactas de JavaScript moderno, React y fundamentos de Docker
+                      para acompañar la formación universitaria.
+                    </p>
+                  </article>
+                </li>
+                <li>
+                  <article>
+                    <time datetime="2025">2025</time>
+                    <h4>Proyecto integrador de desarrollo web</h4>
+                    <p class="text-muted">
+                      Aplicación full stack en equipo aplicando metodología Scrum, control de
+                      versiones con Git y despliegue del cliente en la nube.
+                    </p>
+                  </article>
+                </li>
+              </ol>
+            </div>
+
+            <aside class="about__aside" aria-labelledby="datos-rapidos">
+              <h3 id="datos-rapidos">Datos rápidos</h3>
+              <dl class="data-list">
+                <div>
+                  <dt>Ubicación</dt>
+                  <dd>Naranjito, Ecuador</dd>
+                </div>
+                <div>
+                  <dt>Universidad</dt>
+                  <dd>UNEMI</dd>
+                </div>
+                <div>
+                  <dt>Carrera</dt>
+                  <dd>Ing. en Software</dd>
+                </div>
+                <div>
+                  <dt>Semestre</dt>
+                  <dd>Octavo</dd>
+                </div>
+                <div>
+                  <dt>Enfoque</dt>
+                  <dd>Frontend / Full stack</dd>
+                </div>
+                <div>
+                  <dt>Idiomas</dt>
+                  <dd>Español</dd>
+                </div>
+                <div>
+                  <dt>Disponibilidad</dt>
+                  <dd>Prácticas / medio tiempo</dd>
+                </div>
+              </dl>
+              <p class="field__hint" style="margin-top: var(--space-sm)">
+                Actualmente aprendiendo: TypeScript, testing con Jest y Docker.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           3. SKILLS / HABILIDADES
+           ===================================================== -->
+      <section class="section" id="skills" aria-labelledby="skills-titulo">
+        <div class="container">
+          <header class="section__header">
+            <span class="section__eyebrow">02 — Habilidades</span>
+            <h2 id="skills-titulo">Habilidades técnicas</h2>
+            <p class="section__lead">
+              Tecnologías con las que trabajo, agrupadas por categoría. El nivel indicado refleja
+              lo que puedo explicar y sostener en una entrevista técnica.
+            </p>
+          </header>
+
+          <!-- Frontend -->
+          <article class="skills-group">
+            <h3 class="skills-group__title">
+              Frontend <span class="skills-group__count">5 tecnologías</span>
+            </h3>
+            <ul class="skills-grid">
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">&lt;/&gt;</span>
+                  <h4 class="skill__name">HTML5 <span class="skill__level">Intermedio</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: intermedio, 70 por ciento">
+                    <span style="width: 70%"></span>
+                  </div>
+                  <p class="skill__desc">Marcado semántico, formularios y accesibilidad básica.</p>
+                </article>
+              </li>
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">CSS</span>
+                  <h4 class="skill__name">CSS3 <span class="skill__level">Intermedio</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: intermedio, 70 por ciento">
+                    <span style="width: 70%"></span>
+                  </div>
+                  <p class="skill__desc">Flexbox, Grid, custom properties y diseño responsive.</p>
+                </article>
+              </li>
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">JS</span>
+                  <h4 class="skill__name">JavaScript (ES6+) <span class="skill__level">Intermedio</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: intermedio, 75 por ciento">
+                    <span style="width: 75%"></span>
+                  </div>
+                  <p class="skill__desc">DOM, eventos, fetch, async/await y módulos.</p>
+                </article>
+              </li>
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">RE</span>
+                  <h4 class="skill__name">React <span class="skill__level">Basico</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: Basico, 40 por ciento">
+                    <span style="width: 40%"></span>
+                  </div>
+                  <p class="skill__desc">Componentes, hooks, estado y consumo de APIs.</p>
+                </article>
+              </li>
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">TS</span>
+                  <h4 class="skill__name">TypeScript <span class="skill__level">Básico</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: básico, 40 por ciento">
+                    <span style="width: 40%"></span>
+                  </div>
+                  <p class="skill__desc">Tipos, interfaces y tipado de componentes. En aprendizaje.</p>
+                </article>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Backend -->
+          <article class="skills-group">
+            <h3 class="skills-group__title">
+              Backend <span class="skills-group__count">4 tecnologías</span>
+            </h3>
+            <ul class="skills-grid">
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">JV</span>
+                  <h4 class="skill__name">Java <span class="skill__level">Intermedio</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: intermedio, 70 por ciento">
+                    <span style="width: 70%"></span>
+                  </div>
+                  <p class="skill__desc">POO, colecciones y aplicaciones académicas con JDBC.</p>
+                </article>
+              </li>
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">ND</span>
+                  <h4 class="skill__name">Node.js + Express <span class="skill__level">Intermedio</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: intermedio, 60 por ciento">
+                    <span style="width: 60%"></span>
+                  </div>
+                  <p class="skill__desc">Rutas, middlewares y autenticación con JWT.</p>
+                </article>
+              </li>
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">PY</span>
+                  <h4 class="skill__name">Python <span class="skill__level">Intermedio</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: intermedio, 65 por ciento">
+                    <span style="width: 65%"></span>
+                  </div>
+                  <p class="skill__desc">Scripting, automatización y APIs con FastAPI.</p>
+                </article>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Bases de datos -->
+          <article class="skills-group">
+            <h3 class="skills-group__title">
+              Bases de datos <span class="skills-group__count">3 tecnologías</span>
+            </h3>
+            <ul class="skills-grid">
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">SQL</span>
+                  <h4 class="skill__name">MySQL <span class="skill__level">Intermedio</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: intermedio, 70 por ciento">
+                    <span style="width: 70%"></span>
+                  </div>
+                  <p class="skill__desc">Modelado relacional, joins, vistas y procedimientos.</p>
+                </article>
+              </li>
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">PG</span>
+                  <h4 class="skill__name">PostgreSQL <span class="skill__level">Intermedio</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: intermedio, 60 por ciento">
+                    <span style="width: 60%"></span>
+                  </div>
+                  <p class="skill__desc">Consultas, índices y normalización de esquemas.</p>
+                </article>
+              </li>
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">MG</span>
+                  <h4 class="skill__name">MongoDB <span class="skill__level">Básico</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: básico, 45 por ciento">
+                    <span style="width: 45%"></span>
+                  </div>
+                  <p class="skill__desc">Colecciones, CRUD y modelado de documentos con Mongoose.</p>
+                </article>
+              </li>
+            </ul>
+          </article>
+
+          <!-- Herramientas y otros -->
+          <article class="skills-group">
+            <h3 class="skills-group__title">
+              Herramientas, cloud y diseño <span class="skills-group__count">5 tecnologías</span>
+            </h3>
+            <ul class="skills-grid">
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">GIT</span>
+                  <h4 class="skill__name">Git &amp; GitHub <span class="skill__level">Intermedio</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: intermedio, 75 por ciento">
+                    <span style="width: 75%"></span>
+                  </div>
+                  <p class="skill__desc">Ramas, pull requests, resolución de conflictos y Pages.</p>
+                </article>
+              </li>
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">DK</span>
+                  <h4 class="skill__name">Docker <span class="skill__level">Básico</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: básico, 40 por ciento">
+                    <span style="width: 40%"></span>
+                  </div>
+                  <p class="skill__desc">Imágenes, contenedores y docker-compose en desarrollo.</p>
+                </article>
+              </li>
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">PM</span>
+                  <h4 class="skill__name">Postman <span class="skill__level">Intermedio</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: intermedio, 70 por ciento">
+                    <span style="width: 70%"></span>
+                  </div>
+                  <p class="skill__desc">Pruebas de endpoints, colecciones y variables de entorno.</p>
+                </article>
+              </li>
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">FG</span>
+                  <h4 class="skill__name">Figma <span class="skill__level">Básico</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: básico, 50 por ciento">
+                    <span style="width: 50%"></span>
+                  </div>
+                  <p class="skill__desc">Wireframes, prototipos simples y sistemas de componentes.</p>
+                </article>
+              </li>
+              <li>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">CL</span>
+                  <h4 class="skill__name">Cloud (Azure / Vercel) <span class="skill__level">Básico</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: básico, 40 por ciento">
+                    <span style="width: 40%"></span>
+                  </div>
+                  <p class="skill__desc">Despliegue de sitios estáticos y servicios sencillos.</p>
+                </article>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           4. PROYECTOS DESTACADOS
+           ===================================================== -->
+      <section class="section section--alt" id="proyectos" aria-labelledby="proyectos-titulo">
+        <div class="container">
+          <header class="section__header">
+            <span class="section__eyebrow">03 — Portafolio</span>
+            <h2 id="proyectos-titulo">Proyectos destacados</h2>
+            <p class="section__lead">
+              Proyectos académicos y personales. Usa los filtros para ver los que emplean una
+              tecnología concreta.
+            </p>
+          </header>
+
+          <!-- Filtro por tecnología (JavaScript) -->
+          <div class="filters" id="filtros-proyectos" role="group" aria-label="Filtrar proyectos por tecnología">
+            <button class="filter-chip" type="button" data-filter="all" aria-pressed="true">Todos</button>
+            <button class="filter-chip" type="button" data-filter="javascript" aria-pressed="false">JavaScript</button>
+            <button class="filter-chip" type="button" data-filter="react" aria-pressed="false">React</button>
+            <button class="filter-chip" type="button" data-filter="java" aria-pressed="false">Java</button>
+            <button class="filter-chip" type="button" data-filter="python" aria-pressed="false">Python</button>
+            <button class="filter-chip" type="button" data-filter="sql" aria-pressed="false">Bases de datos</button>
+          </div>
+
+          <div class="projects-grid" id="grid-proyectos">
+            <!-- Proyecto 1 -->
+            <article class="card project-card" data-tech="java sql">
+              <figure class="card__media">
+                <img
+                  src="assets/img/proyecto-inventario.svg"
+                  alt="Captura del panel de control del sistema de gestión de inventario"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="card__body">
+                <h3 class="card__title">Sistema de Gestión de Inventario</h3>
+                <p class="card__text">
+                  Aplicación web para registrar productos, controlar stock y generar reportes de
+                  movimientos en una microempresa.
+                </p>
+                <ul class="badge-list">
+                  <li><span class="badge">Java</span></li>
+                  <li><span class="badge">MySQL</span></li>
+                  <li><span class="badge">Thymeleaf</span></li>
+                </ul>
+                <footer class="card__footer">
+                  <button class="btn btn--secondary" type="button" data-modal-target="detalle-inventario">
+                    Ver detalles
+                  </button>
+                  <a class="btn btn--ghost" href="https://github.com/jeandaly20" target="_blank" rel="noopener">
+                    Repositorio
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" />
+                    </svg>
+                  </a>
+                </footer>
+              </div>
+
+              <!-- Contenido ampliado que muestra el modal -->
+              <template id="detalle-inventario">
+                <h3>Sistema de Gestión de Inventario</h3>
+                <p class="text-muted">Proyecto académico · 2024 · Equipo de 3 personas</p>
+                <h4>Problema que resuelve</h4>
+                <p>
+                  Una microempresa llevaba su inventario en hojas de cálculo sueltas, lo que
+                  provocaba diferencias entre el stock real y el registrado. El sistema centraliza
+                  productos, entradas y salidas en una sola fuente de datos.
+                </p>
+                <h4>Mi aporte</h4>
+                <p>
+                  Modelado de la base de datos, implementación del CRUD de productos y del módulo
+                  de reportes de movimientos con filtros por fecha.
+                </p>
+                <h4>Tecnologías</h4>
+                <ul class="badge-list">
+                  <li><span class="badge badge--primary">Java 17</span></li>
+                  <li><span class="badge badge--primary">Spring Data JPA</span></li>
+                  <li><span class="badge badge--primary">MySQL</span></li>
+                  <li><span class="badge badge--primary">Thymeleaf</span></li>
+                </ul>
+              </template>
+            </article>
+
+            <!-- Proyecto 2 -->
+            <article class="card project-card" data-tech="javascript react">
+              <figure class="card__media">
+                <img
+                  src="assets/img/proyecto-finanzas.svg"
+                  alt="Captura de la aplicación de control de gastos personales con gráficos"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="card__body">
+                <h3 class="card__title">FinTrack — Control de Gastos</h3>
+                <p class="card__text">
+                  Aplicación web para registrar ingresos y gastos personales, categorizarlos y
+                  visualizar el resumen mensual.
+                </p>
+                <ul class="badge-list">
+                  <li><span class="badge">React</span></li>
+                  <li><span class="badge">Node.js</span></li>
+                  <li><span class="badge">Express</span></li>
+                  <li><span class="badge">MongoDB</span></li>
+                </ul>
+                <footer class="card__footer">
+                  <button class="btn btn--secondary" type="button" data-modal-target="detalle-finanzas">
+                    Ver detalles
+                  </button>
+                  <a class="btn btn--ghost" href="https://github.com/jeandaly20" target="_blank" rel="noopener">
+                    Repositorio
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" />
+                    </svg>
+                  </a>
+                </footer>
+              </div>
+
+              <template id="detalle-finanzas">
+                <h3>FinTrack — Control de Gastos</h3>
+                <p class="text-muted">Proyecto personal · 2025</p>
+                <h4>Problema que resuelve</h4>
+                <p>
+                  Llevar las finanzas personales en notas o en la memoria hace imposible saber en
+                  qué se va el dinero. FinTrack registra cada movimiento, lo clasifica por
+                  categoría y muestra el balance del mes en un solo panel.
+                </p>
+                <h4>Qué implementé</h4>
+                <p>
+                  Interfaz en React con hooks y estado global ligero, API REST con Express,
+                  autenticación con JWT y persistencia en MongoDB Atlas.
+                </p>
+                <h4>Tecnologías</h4>
+                <ul class="badge-list">
+                  <li><span class="badge badge--primary">React</span></li>
+                  <li><span class="badge badge--primary">Node.js</span></li>
+                  <li><span class="badge badge--primary">Express</span></li>
+                  <li><span class="badge badge--primary">MongoDB</span></li>
+                  <li><span class="badge badge--primary">JWT</span></li>
+                </ul>
+              </template>
+            </article>
+
+            <!-- Proyecto 3 -->
+            <article class="card project-card" data-tech="python sql">
+              <figure class="card__media">
+                <img
+                  src="assets/img/proyecto-api.svg"
+                  alt="Captura de la documentación interactiva de la API REST de biblioteca"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="card__body">
+                <h3 class="card__title">API REST — Biblioteca Universitaria</h3>
+                <p class="card__text">
+                  Servicio REST para gestionar el catálogo de libros y los préstamos de una
+                  biblioteca, con documentación automática.
+                </p>
+                <ul class="badge-list">
+                  <li><span class="badge">Python</span></li>
+                  <li><span class="badge">FastAPI</span></li>
+                  <li><span class="badge">PostgreSQL</span></li>
+                  <li><span class="badge">Docker</span></li>
+                </ul>
+                <footer class="card__footer">
+                  <button class="btn btn--secondary" type="button" data-modal-target="detalle-api">
+                    Ver detalles
+                  </button>
+                  <a class="btn btn--ghost" href="https://github.com/jeandaly20" target="_blank" rel="noopener">
+                    Repositorio
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" />
+                    </svg>
+                  </a>
+                </footer>
+              </div>
+
+              <template id="detalle-api">
+                <h3>API REST — Biblioteca Universitaria</h3>
+                <p class="text-muted">Proyecto académico · 2025</p>
+                <h4>Problema que resuelve</h4>
+                <p>
+                  El control de préstamos se llevaba manualmente y no existía forma de consultar
+                  la disponibilidad de un libro sin acudir físicamente. La API expone el catálogo
+                  y el estado de cada préstamo para que cualquier cliente pueda consumirlo.
+                </p>
+                <h4>Qué implementé</h4>
+                <p>
+                  Endpoints CRUD de libros, usuarios y préstamos, validación de datos con
+                  Pydantic, control de fechas de devolución y despliegue local con Docker Compose.
+                </p>
+                <h4>Tecnologías</h4>
+                <ul class="badge-list">
+                  <li><span class="badge badge--primary">Python</span></li>
+                  <li><span class="badge badge--primary">FastAPI</span></li>
+                  <li><span class="badge badge--primary">PostgreSQL</span></li>
+                  <li><span class="badge badge--primary">Docker</span></li>
+                </ul>
+              </template>
+            </article>
+
+            <!-- Proyecto 4 -->
+            <article class="card project-card" data-tech="javascript">
+              <figure class="card__media">
+                <img
+                  src="assets/img/proyecto-portafolio.svg"
+                  alt="Captura de la página de inicio de este portafolio web"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="card__body">
+                <h3 class="card__title">Portafolio Web Personal</h3>
+                <p class="card__text">
+                  Este mismo sitio: portafolio responsive construido sin frameworks, con un
+                  sistema de diseño propio documentado.
+                </p>
+                <ul class="badge-list">
+                  <li><span class="badge">HTML5</span></li>
+                  <li><span class="badge">CSS3</span></li>
+                  <li><span class="badge">JavaScript</span></li>
+                  <li><span class="badge">GitHub Pages</span></li>
+                </ul>
+                <footer class="card__footer">
+                  <button class="btn btn--secondary" type="button" data-modal-target="detalle-portafolio">
+                    Ver detalles
+                  </button>
+                </footer>
+              </div>
+
+              <template id="detalle-portafolio">
+                <h3>Portafolio Web Personal</h3>
+                <p class="text-muted">Proyecto académico · 2026</p>
+                <h4>Problema que resuelve</h4>
+                <p>
+                  Necesitaba un espacio propio donde mostrar mis proyectos y habilidades sin
+                  depender de plantillas de terceros, y que además sirviera como carta de
+                  presentación para postular a prácticas.
+                </p>
+                <h4>Qué implementé</h4>
+                <p>
+                  HTML semántico, CSS organizado en capas (tokens, base, componentes y layout),
+                  tema claro/oscuro con persistencia en localStorage, filtro de proyectos, modal
+                  accesible, validación de formulario y navegación responsive.
+                </p>
+                <h4>Tecnologías</h4>
+                <ul class="badge-list">
+                  <li><span class="badge badge--primary">HTML5</span></li>
+                  <li><span class="badge badge--primary">CSS3</span></li>
+                  <li><span class="badge badge--primary">JavaScript</span></li>
+                  <li><span class="badge badge--primary">Git</span></li>
+                  <li><span class="badge badge--primary">GitHub Pages</span></li>
+                </ul>
+              </template>
+            </article>
+          </div>
+
+          <p class="projects__empty" id="proyectos-vacio" hidden>
+            No hay proyectos que usen esa tecnología todavía.
+          </p>
+        </div>
+      </section>
+
+      <!-- =====================================================
+           5. CONTACTO
+           ===================================================== -->
+      <section class="section" id="contacto" aria-labelledby="contacto-titulo">
+        <div class="container">
+          <header class="section__header">
+            <span class="section__eyebrow">04 — Contacto</span>
+            <h2 id="contacto-titulo">Hablemos</h2>
+            <p class="section__lead">
+              ¿Tienes una vacante de prácticas, un proyecto o una duda? Escríbeme y respondo en
+              menos de 48 horas.
+            </p>
+          </header>
+
+          <div class="contact">
+            <div class="contact__info">
+              <h3>Datos de contacto</h3>
+              <p class="text-muted">
+                Prefiero el correo para temas formales y LinkedIn para conversaciones rápidas.
+              </p>
+
+              <ul class="contact-list">
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m2 7 10 6 10-6" />
+                  </svg>
+                  <a href="mailto:jsuareza11@unemi.edu.ec">jsuareza11@unemi.edu.ec</a>
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.1.82-.26.82-.58v-2.2c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.66-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.4 1.24-3.24-.12-.3-.54-1.53.12-3.18 0 0 1-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.77.84 1.23 1.92 1.23 3.24 0 4.63-2.81 5.65-5.49 5.95.43.37.82 1.1.82 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 12 .5z" />
+                  </svg>
+                  <a href="https://github.com/jeandaly20" target="_blank" rel="noopener">github.com/jeandaly20</a>
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z" />
+                  </svg>
+                  <a href="https://www.linkedin.com/in/jean-suarez-acevedo-46091a190" target="_blank" rel="noopener">linkedin.com/in/jean-suarez-acevedo</a>
+                </li>
+                <li>
+                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span>Naranjito, Ecuador (GMT-5)</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact__form-wrapper">
+              <h3>Envíame un mensaje</h3>
+
+              <!-- novalidate: la validación se controla desde JavaScript -->
+              <form class="form" id="form-contacto" novalidate>
+                <div class="form__row">
+                  <div class="field">
+                    <label class="field__label" for="nombre">Nombre completo</label>
+                    <input
+                      class="input"
+                      type="text"
+                      id="nombre"
+                      name="nombre"
+                      placeholder="Ana Pérez"
+                      autocomplete="name"
+                      required
+                      minlength="3"
+                      aria-describedby="error-nombre"
+                    />
+                    <p class="field__error" id="error-nombre"></p>
+                  </div>
+
+                  <div class="field">
+                    <label class="field__label" for="email">Correo electrónico</label>
+                    <input
+                      class="input"
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="ana@empresa.com"
+                      autocomplete="email"
+                      required
+                      aria-describedby="error-email"
+                    />
+                    <p class="field__error" id="error-email"></p>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="asunto">Motivo del mensaje</label>
+                  <select class="select" id="asunto" name="asunto" required aria-describedby="error-asunto">
+                    <option value="">Selecciona una opción</option>
+                    <option value="practicas">Oferta de prácticas</option>
+                    <option value="proyecto">Propuesta de proyecto</option>
+                    <option value="colaboracion">Colaboración académica</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                  <p class="field__error" id="error-asunto"></p>
+                </div>
+
+                <div class="field">
+                  <label class="field__label" for="mensaje">Mensaje</label>
+                  <textarea
+                    class="textarea"
+                    id="mensaje"
+                    name="mensaje"
+                    placeholder="Cuéntame brevemente de qué se trata…"
+                    required
+                    minlength="15"
+                    maxlength="600"
+                    aria-describedby="ayuda-mensaje error-mensaje"
+                  ></textarea>
+                  <p class="field__hint" id="ayuda-mensaje">
+                    <span id="contador-mensaje">0</span>/600 caracteres. Mínimo 15.
+                  </p>
+                  <p class="field__error" id="error-mensaje"></p>
+                </div>
+
+                <div class="field">
+                  <label class="checkbox" for="consentimiento">
+                    <input type="checkbox" id="consentimiento" name="consentimiento" required aria-describedby="error-consentimiento" />
+                    <span>Autorizo que se use mi correo únicamente para responder este mensaje.</span>
+                  </label>
+                  <p class="field__error" id="error-consentimiento"></p>
+                </div>
+
+                <button class="btn btn--primary btn--block" type="submit">Enviar mensaje</button>
+
+                <!-- Región viva: los lectores de pantalla anuncian el resultado -->
+                <p class="form__status" id="estado-formulario" role="status" aria-live="polite"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p style="margin: 0">
+          © <span id="anio-actual">2026</span> Jean Carlos Suárez — Portafolio académico.
+        </p>
+        <ul class="site-footer__links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- =====================================================
+         MODAL (detalle de proyecto) — reutilizable
+         ===================================================== -->
+    <div class="modal" id="modal-proyecto" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <div class="modal__dialog">
+        <button class="btn-icon modal__close" type="button" id="modal-close" aria-label="Cerrar ventana de detalle">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+        <h2 class="visually-hidden" id="modal-titulo">Detalle del proyecto</h2>
+        <div class="modal__content" id="modal-contenido"></div>
+      </div>
+    </div>
+
+    <!-- Botón volver arriba -->
+    <button class="btn-icon back-to-top" type="button" id="back-to-top" aria-label="Volver al inicio de la página">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+  </body>
+</html>

@@ -27,7 +27,7 @@ Objetivos técnicos del proyecto:
 | Fase | Nombre | Entregable | Estado |
 |---|---|---|---|
 | 1 | Configuración y sistema de diseño | Repositorio inicializado y tokens visuales definidos | ✅ |
-| 2 | Estructura y maquetación | Página principal con HTML semántico y CSS responsive | ⏳ |
+| 2 | Estructura y maquetación | Página principal con HTML semántico y CSS responsive | ✅ |
 | 3 | Interactividad | Funcionalidades JavaScript | ⏳ |
 | 4 | Documentación del sistema | Página de Design System y README final | ⏳ |
 
