@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Interfaz web del detector de daños estructurales analizando una foto de una pared">
+  <rect width="800" height="500" fill="#0f172a" />
+
+  <rect x="40" y="36" width="720" height="428" rx="16" fill="#111827" stroke="#1f2937" stroke-width="2" />
+  <rect x="40" y="36" width="720" height="44" rx="16" fill="#1f2937" />
+  <rect x="40" y="64" width="720" height="16" fill="#1f2937" />
+  <g fill="#4b5563">
+    <circle cx="68" cy="58" r="5" />
+    <circle cx="86" cy="58" r="5" />
+    <circle cx="104" cy="58" r="5" />
+  </g>
+  <rect x="132" y="50" width="200" height="16" rx="8" fill="#374151" />
+
+  <!-- Panel izquierdo: foto subida de la pared -->
+  <rect x="72" y="106" width="300" height="314" rx="12" fill="#1f2937" />
+  <rect x="94" y="128" width="256" height="180" rx="8" fill="#374151" />
+  <path d="M94 260 L150 200 L190 240 L230 190 L280 250 L350 200 L350 308 L94 308 Z" fill="#4b5563" />
+  <path d="M170 230 L200 170 L210 260" stroke="#dc2626" stroke-width="4" fill="none" stroke-linecap="round" />
+  <rect x="94" y="326" width="256" height="14" rx="7" fill="#4f46e5" />
+  <rect x="94" y="352" width="180" height="10" rx="5" fill="#4b5563" />
+
+  <!-- Panel derecho: resultados de las 4 CNN -->
+  <g>
+    <rect x="396" y="106" width="332" height="52" rx="10" fill="#1f2937" />
+    <rect x="414" y="122" width="90" height="12" rx="6" fill="#a5b4fc" />
+    <rect x="514" y="122" width="180" height="12" rx="6" fill="#374151" />
+
+    <rect x="396" y="170" width="332" height="16" rx="8" fill="#1f2937" />
+    <rect x="396" y="170" width="230" height="16" rx="8" fill="#0d9488" />
+
+    <rect x="396" y="200" width="332" height="16" rx="8" fill="#1f2937" />
+    <rect x="396" y="200" width="150" height="16" rx="8" fill="#2dd4bf" />
+
+    <rect x="396" y="230" width="332" height="16" rx="8" fill="#1f2937" />
+    <rect x="396" y="230" width="90" height="16" rx="8" fill="#2dd4bf" />
+
+    <rect x="396" y="278" width="332" height="130" rx="10" fill="#1f2937" />
+    <rect x="414" y="296" width="120" height="10" rx="5" fill="#4b5563" />
+    <rect x="414" y="320" width="296" height="1" fill="#374151" />
+    <rect x="414" y="336" width="150" height="10" rx="5" fill="#4b5563" />
+    <rect x="596" y="336" width="60" height="10" rx="5" fill="#16a34a" />
+    <rect x="414" y="360" width="150" height="10" rx="5" fill="#4b5563" />
+    <rect x="596" y="360" width="60" height="10" rx="5" fill="#4b5563" />
+    <rect x="414" y="384" width="150" height="10" rx="5" fill="#4b5563" />
+    <rect x="596" y="384" width="60" height="10" rx="5" fill="#4b5563" />
+  </g>
+</svg>

@@ -626,33 +626,33 @@
               </template>
             </article>
 
-            <article class="card project-card reveal" data-tech="python sql">
+            <article class="card project-card reveal" data-tech="python javascript">
               <figure class="card__media">
                 <img
-                  src="assets/img/proyecto-api.svg"
-                  alt="Captura de la documentación interactiva de la API REST de biblioteca"
+                  src="assets/img/proyecto-danos-cnn.svg"
+                  alt="Interfaz web que analiza una foto de una pared con 4 redes neuronales y muestra el diagnóstico"
                   width="800"
                   height="500"
                   loading="lazy"
                 />
               </figure>
               <div class="card__body">
-                <h3 class="card__title">API REST — Biblioteca Universitaria</h3>
+                <h3 class="card__title">Detector de Daños Estructurales con IA</h3>
                 <p class="card__text">
-                  Servicio REST para gestionar el catálogo de libros y los préstamos de una
-                  biblioteca, con documentación automática.
+                  Aplicación web que sube una foto de una pared y la analiza con cuatro redes
+                  neuronales convolucionales para detectar grietas, humedad y otros daños.
                 </p>
                 <ul class="badge-list">
                   <li><span class="badge">Python</span></li>
-                  <li><span class="badge">FastAPI</span></li>
-                  <li><span class="badge">PostgreSQL</span></li>
-                  <li><span class="badge">Docker</span></li>
+                  <li><span class="badge">TensorFlow/Keras</span></li>
+                  <li><span class="badge">Flask</span></li>
+                  <li><span class="badge">JavaScript</span></li>
                 </ul>
                 <footer class="card__footer">
-                  <button class="btn btn--secondary" type="button" data-modal-target="detalle-api">
+                  <button class="btn btn--secondary" type="button" data-modal-target="detalle-danos-cnn">
                     Ver detalles
                   </button>
-                  <a class="btn btn--ghost" href="https://github.com/jeandaly20" target="_blank" rel="noopener">
+                  <a class="btn btn--ghost" href="https://github.com/jeandaly20/Deteccion-Danos-Estructurales" target="_blank" rel="noopener">
                     Repositorio
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" />
@@ -661,26 +661,32 @@
                 </footer>
               </div>
 
-              <template id="detalle-api">
-                <h3>API REST — Biblioteca Universitaria</h3>
-                <p class="text-muted">Proyecto académico · 2025</p>
+              <template id="detalle-danos-cnn">
+                <h3>Detector de Daños Estructurales con IA</h3>
+                <p class="text-muted">Proyecto académico · 2026</p>
                 <h4>Problema que resuelve</h4>
                 <p>
-                  El control de préstamos se llevaba manualmente y no existía forma de consultar
-                  la disponibilidad de un libro sin acudir físicamente. La API expone el catálogo
-                  y el estado de cada préstamo para que cualquier cliente pueda consumirlo.
+                  Inspeccionar visualmente el estado de una pared o fachada es subjetivo y
+                  depende de la experiencia de quien la revisa. Esta aplicación entrena modelos
+                  de visión por computador para reconocer 7 estados de una superficie (grietas
+                  mayores y menores, humedad, desprendimiento, pintura descascarada, algas y
+                  superficie normal) y los deja disponibles como un servicio web real.
                 </p>
                 <h4>Qué implementé</h4>
                 <p>
-                  Endpoints CRUD de libros, usuarios y préstamos, validación de datos con
-                  Pydantic, control de fechas de devolución y despliegue local con Docker Compose.
+                  Entrené por transfer learning cuatro arquitecturas (VGG16, ResNet50,
+                  MobileNetV2 y EfficientNetB0), alcanzando entre 85% y 86% de accuracy en el
+                  conjunto de prueba. Luego construí una API en Flask que carga los 4 modelos,
+                  combina sus predicciones en un ensamble y expone el resultado a una interfaz
+                  web propia hecha con HTML, CSS y JavaScript, sin frameworks de frontend.
                 </p>
                 <h4>Tecnologías</h4>
                 <ul class="badge-list">
                   <li><span class="badge badge--primary">Python</span></li>
-                  <li><span class="badge badge--primary">FastAPI</span></li>
-                  <li><span class="badge badge--primary">PostgreSQL</span></li>
+                  <li><span class="badge badge--primary">TensorFlow/Keras</span></li>
+                  <li><span class="badge badge--primary">Flask</span></li>
                   <li><span class="badge badge--primary">Docker</span></li>
+                  <li><span class="badge badge--primary">JavaScript</span></li>
                 </ul>
               </template>
             </article>
