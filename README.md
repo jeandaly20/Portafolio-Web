@@ -5,53 +5,109 @@ Portafolio personal e interactivo desarrollado con **HTML5 semántico, CSS puro 
 **Autor:** Jean Carlos Suárez · Naranjito, Ecuador
 **Contacto:** [jsuareza11@unemi.edu.ec](mailto:jsuareza11@unemi.edu.ec) · [GitHub](https://github.com/jeandaly20) · [LinkedIn](https://www.linkedin.com/in/jean-suarez-acevedo-46091a190)
 
+🔗 **Sitio publicado:** https://jeandaly20.github.io/Portafolio-Web/
+📁 **Repositorio:** https://github.com/jeandaly20/Portafolio-Web
+
+---
+
+## 📋 Contenido
+
+- [Descripción](#descripción)
+- [Secciones del sitio](#secciones-del-sitio)
+- [Tecnologías](#tecnologías)
+- [Estructura del proyecto](#estructura-del-proyecto)
+- [Sistema de diseño](#sistema-de-diseño)
+- [Funcionalidades JavaScript](#funcionalidades-javascript)
+- [Responsive](#responsive)
+- [Cómo verlo en local](#cómo-verlo-en-local)
+- [Fases de implementación](#fases-de-implementación)
+- [Publicación en GitHub Pages](#publicación-en-github-pages)
+- [Capturas](#capturas)
+- [Checklist de entrega](#checklist-de-entrega)
+
 ---
 
 ## Descripción
 
-Sitio web personal que reunirá mi información académica y profesional, mis habilidades técnicas y
-los proyectos desarrollados durante la carrera. Incluirá además una página de **Design System**
-donde se documentan las decisiones visuales y los componentes reutilizables.
+Sitio web personal que reúne mi información académica y profesional, mis habilidades técnicas y
+los proyectos que he desarrollado durante la carrera de Ingeniería de Software. Incluye además una
+página de **Design System** donde se documentan las decisiones visuales y los componentes
+reutilizables que construyen la interfaz.
 
-Objetivos técnicos del proyecto:
+El objetivo técnico del proyecto es demostrar:
 
 - Estructura HTML semántica y accesible.
 - CSS organizado por capas y basado en *custom properties*, no en valores repetidos.
 - Comportamiento real con JavaScript, sin frameworks.
-- Diseño responsive para escritorio, tablet y móvil.
+- Diseño responsive sin desbordamientos horizontales.
 
 ---
 
-## Fases de implementación
+## Secciones del sitio
 
-| Fase | Nombre | Entregable | Estado |
-|---|---|---|---|
-| 1 | Configuración y sistema de diseño | Repositorio inicializado y tokens visuales definidos | ✅ |
-| 2 | Estructura y maquetación | Página principal con HTML semántico y CSS responsive | ✅ |
-| 3 | Interactividad | Funcionalidades JavaScript | ✅ |
-| 4 | Documentación del sistema | Página de Design System y README final | ⏳ |
+| Sección | Ubicación | Contenido |
+|---|---|---|
+| Inicio / Presentación | `index.html#inicio` | Nombre, perfil profesional, fotografía, accesos directos y métricas |
+| Sobre mí | `index.html#sobre-mi` | Descripción profesional, formación e intereses académicos |
+| Habilidades | `index.html#skills` | 17 tecnologías agrupadas en Frontend, Backend, Bases de datos y Herramientas |
+| Proyectos | `index.html#proyectos` | 4 proyectos con filtro por tecnología y modal de detalle |
+| Design System | `design-system.html` | Colores, tipografía, espaciado, radios, sombras y componentes |
+| Contacto | `index.html#contacto` | Datos de contacto y formulario validado |
 
 ---
 
-## Fase 1 — Configuración y sistema de diseño
+## Tecnologías
 
-Antes de maquetar una sola pantalla se definieron todas las decisiones visuales del proyecto como
-**CSS Custom Properties**, para que después los componentes las consuman y no haya valores sueltos
-repartidos por el código.
+**Lenguajes y estándares**
+
+- HTML5 semántico (`header`, `nav`, `main`, `section`, `article`, `aside`, `figure`, `figcaption`, `footer`, `template`)
+- CSS3: Custom Properties, Flexbox, CSS Grid, Media Queries, `clamp()`, `color-mix()`
+- JavaScript ES6+: `IntersectionObserver`, `matchMedia`, `localStorage`, delegación de eventos
+
+**Herramientas**
+
+- Git y GitHub para control de versiones
+- GitHub Pages para el despliegue
+- Google Fonts (Inter + JetBrains Mono)
+- Imágenes en SVG y WebP (ligeras y sin dependencias externas)
+
+Sin Bootstrap, Tailwind, jQuery ni ningún framework: todo el CSS y el JS son propios.
+
+---
+
+## Estructura del proyecto
 
 ```text
-Portafolio_Jean_Suárez/
+Portafolio-Web/
+├── index.html              # Página principal (Inicio, Sobre mí, Skills, Proyectos, Contacto)
+├── design-system.html      # Documentación del sistema de diseño
 ├── README.md
 ├── .gitignore
 ├── css/
-│   ├── tokens.css      # Colores, tipografía, espaciado, radios, sombras y capas
-│   └── base.css        # Reset, tipografía global, utilidades y accesibilidad
+│   ├── tokens.css          # Custom properties: colores, tipografía, espaciado, radios, sombras
+│   ├── base.css            # Reset, tipografía global, utilidades y accesibilidad
+│   ├── components.css      # Botones, navbar, cards, badges, skills, formularios, modal…
+│   └── layout.css          # Composición de secciones (Grid/Flexbox) y media queries
+├── js/
+│   └── main.js             # Toda la interactividad, dividida en funciones por funcionalidad
 └── assets/
     └── img/
-        └── favicon.svg
+        ├── favicon.svg
+        ├── jean-suarez.webp
+        ├── proyecto-inventario.svg
+        ├── proyecto-finanzas.svg
+        ├── proyecto-api.svg
+        └── proyecto-portafolio.svg
 ```
 
-### Tokens definidos (`css/tokens.css`)
+El CSS se carga siempre en este orden: **tokens → base → components → layout**, de lo general a lo
+específico, para que la cascada funcione a favor y no haga falta usar `!important`.
+
+---
+
+## Sistema de diseño
+
+Todas las decisiones visuales viven en `css/tokens.css` como CSS Custom Properties:
 
 ```css
 :root {
@@ -74,40 +130,122 @@ Portafolio_Jean_Suárez/
 }
 ```
 
-Categorías cubiertas: **color** (marca, superficies, texto y estados), **tipografía** (familias,
-escala fluida con `clamp()`, pesos e interlineado), **espaciado** (escala de 4 px en `rem`),
-**bordes y radios**, **sombras**, **medidas de layout**, **transiciones** y **capas (z-index)**.
-
 El **tema oscuro** se resuelve redefiniendo esas mismas variables en `:root[data-theme="dark"]` y
-en `@media (prefers-color-scheme: dark)`, de modo que ningún componente necesitará reglas propias
-para el modo oscuro.
+en `@media (prefers-color-scheme: dark)`: ningún componente necesita reglas propias para el modo
+oscuro.
 
-### Base (`css/base.css`)
+La página `design-system.html` muestra en vivo la paleta, la escala tipográfica, la escala de
+espaciado y cada componente **usando las mismas clases que el portafolio**, de modo que la
+documentación nunca se desincroniza del sitio real.
 
-Reset ligero, jerarquía tipográfica de `h1` a `h6`, estilos de enlaces y multimedia, utilidades de
-contenedor y sección, foco visible, enlace de salto al contenido y soporte de
-`prefers-reduced-motion`.
+---
+
+## Funcionalidades JavaScript
+
+Implementadas en `js/main.js`, cada una en su propia función:
+
+| # | Funcionalidad | Detalle |
+|---|---|---|
+| 1 | Tema claro / oscuro | Persistencia con `localStorage`, respeta `prefers-color-scheme` y evita el parpadeo inicial |
+| 2 | Menú responsive | Botón hamburguesa con `aria-expanded`, cierre con Escape, clic fuera o al elegir un enlace |
+| 3 | Scroll spy | `IntersectionObserver` marca el enlace de la sección visible |
+| 4 | Filtro de proyectos | Filtrado por tecnología con `aria-pressed` y mensaje de "sin resultados" |
+| 5 | Modal de proyecto | Contenido tomado de un `<template>`, foco atrapado, cierre con Escape y devolución del foco |
+| 6 | Validación de formulario | Reglas por campo, mensajes accesibles (`aria-invalid`, `aria-describedby`) y contador de caracteres |
+| 7 | Volver arriba | Aparece tras 500 px de scroll; respeta `prefers-reduced-motion` |
+| 8 | Animación de aparición | Las cards se revelan de forma escalonada al entrar en pantalla |
+| 9 | Año dinámico | El año del pie se calcula en tiempo de ejecución |
+
+---
+
+## Responsive
+
+Cuatro puntos de ruptura, trabajados con Grid y Flexbox y unidades relativas (`rem`, `%`, `ch`, `vw`):
+
+| Dispositivo | Ancho | Comportamiento |
+|---|---|---|
+| Escritorio | > 900 px | Layouts a dos columnas (hero, sobre mí, contacto) |
+| Tablet | ≤ 900 px | Las secciones pasan a una columna; la fotografía se reubica |
+| Móvil | ≤ 768 px | Navegación desplegable |
+| Móvil pequeño | ≤ 600 px | Escala de espaciado reducida, formulario y métricas en una columna |
+
+No hay desbordamiento horizontal en ningún ancho: el contenedor usa
+`width: min(100% - margen, --container-max)`.
 
 ---
 
 ## Cómo verlo en local
 
-Todavía no hay página que abrir: la Fase 1 solo contiene las hojas de estilo base. Desde la Fase 2
-el sitio se podrá levantar con:
+**Opción 1 — Abrir el archivo directamente**
+
+```bash
+start index.html
+```
+
+**Opción 2 — Servidor local (recomendado)**
 
 ```bash
 python -m http.server 5500
 ```
 
+Luego abre `http://localhost:5500`. También puedes usar la extensión **Live Server** de VS Code.
+
 ---
 
-## Tecnologías
+## Fases de implementación
 
-- HTML5 semántico
-- CSS3: Custom Properties, Flexbox, CSS Grid, Media Queries, `clamp()`, `color-mix()`
-- JavaScript ES6+
-- Git y GitHub · GitHub Pages
-- Google Fonts (Inter + JetBrains Mono)
+El proyecto se desarrolló en **cuatro fases**, y el historial de Git refleja esa progresión
+(no un único commit final):
+
+| Fase | Nombre | Entregable | Archivos | Estado |
+|---|---|---|---|---|
+| 1 | Configuración y sistema de diseño | Repositorio inicializado y tokens visuales definidos | `.gitignore`, `README.md`, `css/tokens.css`, `css/base.css`, `assets/img/favicon.svg` | ✅ |
+| 2 | Estructura y maquetación | Página principal con HTML semántico y CSS responsive | `index.html`, `css/components.css`, `css/layout.css`, `assets/img/` | ✅ |
+| 3 | Interactividad | Las 9 funcionalidades JavaScript | `js/main.js` | ✅ |
+| 4 | Documentación del sistema | Página de Design System y README final | `design-system.html`, `README.md` | ✅ |
+
+---
+
+## Publicación en GitHub Pages
+
+```bash
+git remote add origin https://github.com/jeandaly20/Portafolio-Web.git
+git push -u origin main
+```
+
+Después, en GitHub: **Settings → Pages → Source: Deploy from a branch → Branch: `main` / `(root)` → Save**.
+En uno o dos minutos el sitio queda disponible en `https://jeandaly20.github.io/Portafolio-Web/`.
+
+---
+
+## Capturas
+
+> Reemplaza estas líneas por capturas reales (`assets/img/captura-*.png`) antes de entregar.
+
+| Inicio (tema claro) | Inicio (tema oscuro) |
+|---|---|
+| _pendiente_ | _pendiente_ |
+
+| Proyectos con filtro | Design System | Vista móvil |
+|---|---|---|
+| _pendiente_ | _pendiente_ | _pendiente_ |
+
+---
+
+## Checklist de entrega
+
+- [x] HTML5 semántico y jerarquía correcta de encabezados
+- [x] Separación entre estructura (HTML), presentación (CSS) y comportamiento (JS)
+- [x] Información profesional completa
+- [x] Sección de habilidades por categorías con nivel de dominio
+- [x] Mínimo 3 proyectos con descripción, problema, tecnologías e imagen
+- [x] CSS Custom Properties aplicadas en todos los componentes
+- [x] Página de Design System sincronizada con el sitio
+- [x] Diseño responsive (escritorio, tablet y móvil)
+- [x] Mínimo 3 funcionalidades JavaScript (hay 9)
+- [x] Repositorio público en GitHub con commits incrementales
+- [ ] Publicado en GitHub Pages y verificado en ventana de incógnito
+- [ ] Capturas reales añadidas al README
 
 ---
 

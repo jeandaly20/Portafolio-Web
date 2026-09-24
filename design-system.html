@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design System — Portafolio de Jean Carlos Suárez</title>
+    <meta
+      name="description"
+      content="Sistema de diseño del portafolio de Jean Carlos Suárez: paleta de colores, tipografía, escala de espaciado y componentes reutilizables."
+    />
+    <meta name="author" content="Jean Carlos Suárez" />
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("portafolio-tema");
+          if (saved === "dark" || saved === "light") {
+            document.documentElement.setAttribute("data-theme", saved);
+          } else {
+            document.documentElement.removeAttribute("data-theme");
+          }
+        } catch (error) {}
+      })();
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="navbar">
+          <a class="navbar__brand" href="index.html">
+            <span class="brand-mark" aria-hidden="true">JS</span>
+            <span>Jean Suárez</span>
+          </a>
+
+          <nav class="navbar__nav" id="nav-principal" aria-label="Navegación principal">
+            <ul class="navbar__menu">
+              <li><a class="navbar__link" href="index.html#inicio">Inicio</a></li>
+              <li><a class="navbar__link" href="index.html#sobre-mi">Sobre mí</a></li>
+              <li><a class="navbar__link" href="index.html#skills">Skills</a></li>
+              <li><a class="navbar__link" href="index.html#proyectos">Proyectos</a></li>
+              <li>
+                <a class="navbar__link is-active" href="design-system.html" aria-current="page">Design System</a>
+              </li>
+              <li><a class="navbar__link" href="index.html#contacto">Contacto</a></li>
+            </ul>
+          </nav>
+
+          <div class="navbar__actions">
+            <button class="btn-icon" type="button" id="theme-toggle" aria-label="Cambiar entre tema claro y oscuro" aria-pressed="false">
+              <svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+              <svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+              </svg>
+            </button>
+
+            <button class="btn-icon navbar__toggle" type="button" id="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-principal">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+                <path d="M3 6h18M3 12h18M3 18h18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <section class="section" aria-labelledby="ds-titulo">
+        <div class="container">
+          <header class="section__header">
+            <span class="section__eyebrow">Documentación</span>
+            <h1 id="ds-titulo">Design System</h1>
+            <p class="section__lead">
+              Decisiones visuales y componentes reutilizables de este portafolio. Todo lo que ves
+              aquí está definido con <code>CSS Custom Properties</code> en
+              <code>css/tokens.css</code> y es exactamente lo que usa el sitio.
+            </p>
+            <p>
+              Cambia el tema con el botón de la barra superior: las muestras se actualizan solas,
+              porque leen las mismas variables que el resto de la interfaz.
+            </p>
+          </header>
+
+          <article class="ds-section" aria-labelledby="ds-colores">
+            <h2 id="ds-colores">1. Colores</h2>
+            <p class="text-muted">
+              Paleta reducida: un color de marca, un acento, tres niveles de superficie y dos de
+              texto. Los valores mostrados corresponden al tema claro.
+            </p>
+
+            <h3>Marca</h3>
+            <ul class="swatch-grid">
+              <li>
+                <figure class="swatch">
+                  <div class="swatch__color" style="background-color: var(--color-primary)"></div>
+                  <figcaption class="swatch__info">
+                    <span class="swatch__name">Primary</span>
+                    <span class="swatch__token">--color-primary · #4f46e5</span>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="swatch">
+                  <div class="swatch__color" style="background-color: var(--color-primary-hover)"></div>
+                  <figcaption class="swatch__info">
+                    <span class="swatch__name">Primary hover</span>
+                    <span class="swatch__token">--color-primary-hover · #4338ca</span>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="swatch">
+                  <div class="swatch__color" style="background-color: var(--color-primary-soft)"></div>
+                  <figcaption class="swatch__info">
+                    <span class="swatch__name">Primary soft</span>
+                    <span class="swatch__token">--color-primary-soft · #eef2ff</span>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="swatch">
+                  <div class="swatch__color" style="background-color: var(--color-secondary)"></div>
+                  <figcaption class="swatch__info">
+                    <span class="swatch__name">Secondary</span>
+                    <span class="swatch__token">--color-secondary · #0d9488</span>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+
+            <h3>Superficies y texto</h3>
+            <ul class="swatch-grid">
+              <li>
+                <figure class="swatch">
+                  <div class="swatch__color" style="background-color: var(--color-background)"></div>
+                  <figcaption class="swatch__info">
+                    <span class="swatch__name">Background</span>
+                    <span class="swatch__token">--color-background · #ffffff</span>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="swatch">
+                  <div class="swatch__color" style="background-color: var(--color-surface)"></div>
+                  <figcaption class="swatch__info">
+                    <span class="swatch__name">Surface</span>
+                    <span class="swatch__token">--color-surface · #f7f7f9</span>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="swatch">
+                  <div class="swatch__color" style="background-color: var(--color-border)"></div>
+                  <figcaption class="swatch__info">
+                    <span class="swatch__name">Border</span>
+                    <span class="swatch__token">--color-border · #e4e4e9</span>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="swatch">
+                  <div class="swatch__color" style="background-color: var(--color-text)"></div>
+                  <figcaption class="swatch__info">
+                    <span class="swatch__name">Text</span>
+                    <span class="swatch__token">--color-text · #111116</span>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="swatch">
+                  <div class="swatch__color" style="background-color: var(--color-text-muted)"></div>
+                  <figcaption class="swatch__info">
+                    <span class="swatch__name">Text muted</span>
+                    <span class="swatch__token">--color-text-muted · #64646f</span>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+
+            <h3>Estados</h3>
+            <ul class="swatch-grid">
+              <li>
+                <figure class="swatch">
+                  <div class="swatch__color" style="background-color: var(--color-success)"></div>
+                  <figcaption class="swatch__info">
+                    <span class="swatch__name">Success</span>
+                    <span class="swatch__token">--color-success · #15803d</span>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="swatch">
+                  <div class="swatch__color" style="background-color: var(--color-error)"></div>
+                  <figcaption class="swatch__info">
+                    <span class="swatch__name">Error</span>
+                    <span class="swatch__token">--color-error · #dc2626</span>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure class="swatch">
+                  <div class="swatch__color" style="background-color: var(--color-focus)"></div>
+                  <figcaption class="swatch__info">
+                    <span class="swatch__name">Focus</span>
+                    <span class="swatch__token">--color-focus · #4f46e5</span>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </article>
+
+          <article class="ds-section" aria-labelledby="ds-tipografia">
+            <h2 id="ds-tipografia">2. Tipografía</h2>
+            <p class="text-muted">
+              Familia principal <code>Inter</code> para la interfaz y
+              <code>JetBrains Mono</code> para tokens y fragmentos de código. Los tamaños grandes
+              usan <code>clamp()</code> para escalar de móvil a escritorio sin media queries.
+            </p>
+
+            <div class="type-scale">
+              <div class="type-row">
+                <p class="type-row__meta">h1 · --text-4xl<br />700 · clamp 2.25–4rem</p>
+                <p><span style="font-size: var(--text-4xl); font-weight: var(--weight-bold); line-height: var(--leading-tight)">Jean Suárez</span></p>
+              </div>
+              <div class="type-row">
+                <p class="type-row__meta">h2 · --text-3xl<br />600</p>
+                <p><span style="font-size: var(--text-3xl); font-weight: var(--weight-semibold); line-height: var(--leading-tight)">Proyectos destacados</span></p>
+              </div>
+              <div class="type-row">
+                <p class="type-row__meta">h3 · --text-xl<br />600</p>
+                <p><span style="font-size: var(--text-xl); font-weight: var(--weight-semibold)">Sistema de Gestión de Inventario</span></p>
+              </div>
+              <div class="type-row">
+                <p class="type-row__meta">Párrafo · --text-base<br />400 · line-height 1.65</p>
+                <p>
+                  Cuerpo de texto por defecto. El ancho máximo de lectura está limitado a
+                  <code>65ch</code> mediante la variable <code>--measure</code>, para que las
+                  líneas no se vuelvan incómodas en pantallas anchas.
+                </p>
+              </div>
+              <div class="type-row">
+                <p class="type-row__meta">Texto secundario<br />--text-sm · muted</p>
+                <p class="text-muted" style="font-size: var(--text-sm)">
+                  Se usa en descripciones de tarjetas, pies de figura y ayudas de formulario.
+                </p>
+              </div>
+              <div class="type-row">
+                <p class="type-row__meta">Enlace<br />--color-primary</p>
+                <p><a href="index.html#proyectos">Ir a la sección de proyectos</a></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="ds-section" aria-labelledby="ds-espaciado">
+            <h2 id="ds-espaciado">3. Escala de espaciado</h2>
+            <p class="text-muted">
+              Escala basada en múltiplos de 4&nbsp;px expresada en <code>rem</code>. Se usa para
+              márgenes, padding y separaciones de grid.
+            </p>
+
+            <div class="ds-block">
+              <div class="spacing-row">
+                <span class="spacing-row__bar" style="width: var(--space-3xs)"></span>
+                <span class="spacing-row__label">--space-3xs · 0.25rem (4px)</span>
+              </div>
+              <div class="spacing-row">
+                <span class="spacing-row__bar" style="width: var(--space-2xs)"></span>
+                <span class="spacing-row__label">--space-2xs · 0.5rem (8px)</span>
+              </div>
+              <div class="spacing-row">
+                <span class="spacing-row__bar" style="width: var(--space-xs)"></span>
+                <span class="spacing-row__label">--space-xs · 0.75rem (12px)</span>
+              </div>
+              <div class="spacing-row">
+                <span class="spacing-row__bar" style="width: var(--space-sm)"></span>
+                <span class="spacing-row__label">--space-sm · 1rem (16px)</span>
+              </div>
+              <div class="spacing-row">
+                <span class="spacing-row__bar" style="width: var(--space-md)"></span>
+                <span class="spacing-row__label">--space-md · 1.5rem (24px)</span>
+              </div>
+              <div class="spacing-row">
+                <span class="spacing-row__bar" style="width: var(--space-lg)"></span>
+                <span class="spacing-row__label">--space-lg · 2rem (32px)</span>
+              </div>
+              <div class="spacing-row">
+                <span class="spacing-row__bar" style="width: var(--space-xl)"></span>
+                <span class="spacing-row__label">--space-xl · 3rem (48px)</span>
+              </div>
+              <div class="spacing-row">
+                <span class="spacing-row__bar" style="width: var(--space-2xl)"></span>
+                <span class="spacing-row__label">--space-2xl · 4.5rem (72px)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="ds-section" aria-labelledby="ds-formas">
+            <h2 id="ds-formas">4. Radios y sombras</h2>
+            <div class="ds-grid">
+              <div class="ds-block">
+                <h3 class="ds-block__title">Border radius</h3>
+                <div class="ds-preview">
+                  <span style="display: grid; place-items: center; width: 5rem; height: 3.5rem; background-color: var(--color-surface); border: var(--border-base); border-radius: var(--radius-sm); font-size: var(--text-xs)">sm</span>
+                  <span style="display: grid; place-items: center; width: 5rem; height: 3.5rem; background-color: var(--color-surface); border: var(--border-base); border-radius: var(--radius-md); font-size: var(--text-xs)">md</span>
+                  <span style="display: grid; place-items: center; width: 5rem; height: 3.5rem; background-color: var(--color-surface); border: var(--border-base); border-radius: var(--radius-lg); font-size: var(--text-xs)">lg</span>
+                  <span style="display: grid; place-items: center; width: 5rem; height: 3.5rem; background-color: var(--color-surface); border: var(--border-base); border-radius: var(--radius-pill); font-size: var(--text-xs)">pill</span>
+                </div>
+                <code class="ds-code">--radius-sm: 0.375rem
+--radius-md: 0.75rem
+--radius-lg: 1.25rem
+--radius-pill: 999px</code>
+              </div>
+
+              <div class="ds-block">
+                <h3 class="ds-block__title">Sombras</h3>
+                <div class="ds-preview">
+                  <span style="display: grid; place-items: center; width: 6rem; height: 4rem; background-color: var(--color-background); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); font-size: var(--text-xs)">sm</span>
+                  <span style="display: grid; place-items: center; width: 6rem; height: 4rem; background-color: var(--color-background); border-radius: var(--radius-md); box-shadow: var(--shadow-card); font-size: var(--text-xs)">card</span>
+                  <span style="display: grid; place-items: center; width: 6rem; height: 4rem; background-color: var(--color-background); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); font-size: var(--text-xs)">lg</span>
+                </div>
+                <code class="ds-code">--shadow-sm
+--shadow-card
+--shadow-lg</code>
+              </div>
+            </div>
+          </article>
+
+          <article class="ds-section" aria-labelledby="ds-componentes">
+            <h2 id="ds-componentes">5. Componentes</h2>
+            <p class="text-muted">
+              Todos los componentes siguientes son los mismos que usa el portafolio: comparten las
+              clases de <code>css/components.css</code>.
+            </p>
+
+            <div class="ds-grid">
+
+              <section class="ds-block" aria-labelledby="ds-botones">
+                <h3 class="ds-block__title" id="ds-botones">Botones</h3>
+                <div class="ds-preview">
+                  <button class="btn btn--primary" type="button">Botón primario</button>
+                  <button class="btn btn--secondary" type="button">Botón secundario</button>
+                  <button class="btn btn--ghost" type="button">Enlace de acción</button>
+                  <button class="btn btn--primary" type="button" disabled>Deshabilitado</button>
+                </div>
+                <code class="ds-code">&lt;button class="btn btn--primary"&gt;…&lt;/button&gt;</code>
+              </section>
+
+              <section class="ds-block" aria-labelledby="ds-badges">
+                <h3 class="ds-block__title" id="ds-badges">Badges / Skills</h3>
+                <ul class="badge-list" style="margin-bottom: var(--space-xs)">
+                  <li><span class="badge">HTML5</span></li>
+                  <li><span class="badge">CSS3</span></li>
+                  <li><span class="badge badge--primary">JavaScript</span></li>
+                  <li><span class="badge badge--secondary">React</span></li>
+                </ul>
+                <article class="skill">
+                  <span class="skill__icon" aria-hidden="true">JS</span>
+                  <h4 class="skill__name">JavaScript <span class="skill__level">Intermedio</span></h4>
+                  <div class="skill__meter" role="img" aria-label="Nivel de dominio: intermedio, 75 por ciento">
+                    <span style="width: 75%"></span>
+                  </div>
+                  <p class="skill__desc">Componente usado en la sección de habilidades.</p>
+                </article>
+              </section>
+
+              <section class="ds-block" aria-labelledby="ds-chips">
+                <h3 class="ds-block__title" id="ds-chips">Chips de filtro</h3>
+                <div class="ds-preview">
+                  <button class="filter-chip" type="button" aria-pressed="true">Todos</button>
+                  <button class="filter-chip" type="button" aria-pressed="false">React</button>
+                  <button class="filter-chip" type="button" aria-pressed="false">Java</button>
+                </div>
+                <code class="ds-code">aria-pressed="true" marca el filtro activo</code>
+              </section>
+
+              <section class="ds-block" aria-labelledby="ds-navbar">
+                <h3 class="ds-block__title" id="ds-navbar">Navbar</h3>
+                <div class="navbar" style="border: var(--border-base); border-radius: var(--radius-md); padding-inline: var(--space-sm)">
+                  <span class="navbar__brand">
+                    <span class="brand-mark" aria-hidden="true">JS</span>
+                    <span>Jean Suárez</span>
+                  </span>
+                  <ul class="navbar__menu">
+                    <li><span class="navbar__link is-active">Inicio</span></li>
+                    <li><span class="navbar__link">Skills</span></li>
+                  </ul>
+                </div>
+                <code class="ds-code">En móvil se convierte en menú desplegable</code>
+              </section>
+            </div>
+
+            <section aria-labelledby="ds-card" style="margin-top: var(--space-md)">
+              <div class="ds-block">
+                <h3 class="ds-block__title" id="ds-card">Card de proyecto</h3>
+                <div style="max-width: 20rem">
+                  <article class="card">
+                    <figure class="card__media">
+                      <img src="assets/img/proyecto-finanzas.svg" alt="Ejemplo de captura dentro de una card de proyecto" width="800" height="500" loading="lazy" />
+                    </figure>
+                    <div class="card__body">
+                      <h4 class="card__title">Nombre del proyecto</h4>
+                      <p class="card__text">Descripción breve de una o dos líneas sobre el proyecto.</p>
+                      <ul class="badge-list">
+                        <li><span class="badge">React</span></li>
+                        <li><span class="badge">Node.js</span></li>
+                      </ul>
+                      <footer class="card__footer">
+                        <button class="btn btn--secondary" type="button">Ver detalles</button>
+                        <a class="btn btn--ghost" href="index.html#proyectos">Repositorio</a>
+                      </footer>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </section>
+
+            <section aria-labelledby="ds-form" style="margin-top: var(--space-md)">
+              <div class="ds-block">
+                <h3 class="ds-block__title" id="ds-form">Campos de formulario</h3>
+                <form class="form" style="max-width: 34rem">
+                  <div class="field">
+                    <label class="field__label" for="ds-input">Input de texto</label>
+                    <input class="input" type="text" id="ds-input" placeholder="Texto de ejemplo" />
+                  </div>
+
+                  <div class="field">
+                    <label class="field__label" for="ds-select">Select</label>
+                    <select class="select" id="ds-select">
+                      <option>Opción uno</option>
+                      <option>Opción dos</option>
+                    </select>
+                  </div>
+
+                  <div class="field">
+                    <label class="field__label" for="ds-textarea">Textarea</label>
+                    <textarea class="textarea" id="ds-textarea" placeholder="Mensaje de ejemplo"></textarea>
+                  </div>
+
+                  <div class="field has-error">
+                    <label class="field__label" for="ds-error">Input con error</label>
+                    <input class="input" type="email" id="ds-error" value="correo-invalido" aria-invalid="true" aria-describedby="ds-error-msg" />
+                    <p class="field__error" id="ds-error-msg">El formato del correo no es válido.</p>
+                  </div>
+
+                  <div class="field">
+                    <label class="checkbox" for="ds-check">
+                      <input type="checkbox" id="ds-check" checked />
+                      <span>Checkbox con etiqueta descriptiva.</span>
+                    </label>
+                  </div>
+
+                  <p class="form__status is-success">Mensaje de estado correcto.</p>
+                  <p class="form__status is-error">Mensaje de estado con error.</p>
+                </form>
+              </div>
+            </section>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p style="margin: 0">© <span id="anio-actual">2026</span> Jean Carlos Suárez — Portafolio académico.</p>
+        <ul class="site-footer__links">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#proyectos">Proyectos</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <button class="btn-icon back-to-top" type="button" id="back-to-top" aria-label="Volver al inicio de la página">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
