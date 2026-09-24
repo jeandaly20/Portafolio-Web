@@ -1,12 +1,3 @@
-/* ============================================================
-   COMPONENTS — Componentes reutilizables del sistema de diseño.
-   Cada bloque de esta hoja se documenta en design-system.html
-   ============================================================ */
-
-/* ------------------------------------------------------------
-   1. Botones
-   ------------------------------------------------------------ */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -85,7 +76,6 @@
   flex-shrink: 0;
 }
 
-/* Botón de icono (tema, menú, cerrar modal) */
 .btn-icon {
   display: inline-flex;
   align-items: center;
@@ -111,10 +101,6 @@
   width: var(--icon-size);
   height: var(--icon-size);
 }
-
-/* ------------------------------------------------------------
-   2. Navbar
-   ------------------------------------------------------------ */
 
 .site-header {
   position: sticky;
@@ -197,7 +183,6 @@
   display: none;
 }
 
-/* Iconos del conmutador de tema: se alternan según el tema activo */
 .icon-sun { display: none; }
 .icon-moon { display: block; }
 
@@ -208,10 +193,6 @@
   :root:not([data-theme="light"]) .icon-sun { display: block; }
   :root:not([data-theme="light"]) .icon-moon { display: none; }
 }
-
-/* ------------------------------------------------------------
-   3. Cards
-   ------------------------------------------------------------ */
 
 .card {
   display: flex;
@@ -271,10 +252,6 @@
   padding-top: var(--space-xs);
 }
 
-/* ------------------------------------------------------------
-   4. Badges / Skills
-   ------------------------------------------------------------ */
-
 .badge {
   display: inline-flex;
   align-items: center;
@@ -315,7 +292,6 @@
   margin: 0;
 }
 
-/* Tarjeta de habilidad con nivel */
 .skill {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -390,10 +366,6 @@
   font-size: var(--text-xs);
   color: var(--color-text-muted);
 }
-
-/* ------------------------------------------------------------
-   5. Formularios
-   ------------------------------------------------------------ */
 
 .form {
   display: grid;
@@ -476,7 +448,6 @@
   flex-shrink: 0;
 }
 
-/* Estados de validación */
 .field__error {
   display: none;
   font-size: var(--text-xs);
@@ -516,10 +487,6 @@
   color: var(--color-error);
 }
 
-/* ------------------------------------------------------------
-   6. Filtros (chips)
-   ------------------------------------------------------------ */
-
 .filters {
   display: flex;
   flex-wrap: wrap;
@@ -551,10 +518,6 @@
   border-color: var(--color-primary);
   color: var(--color-text-inverse);
 }
-
-/* ------------------------------------------------------------
-   7. Modal
-   ------------------------------------------------------------ */
 
 .modal {
   position: fixed;
@@ -611,14 +574,9 @@
   color: var(--color-text-muted);
 }
 
-/* Bloquea el scroll del fondo mientras el modal está abierto */
 body.is-locked {
   overflow: hidden;
 }
-
-/* ------------------------------------------------------------
-   8. Botón "volver arriba"
-   ------------------------------------------------------------ */
 
 .back-to-top {
   position: fixed;
@@ -649,10 +607,6 @@ body.is-locked {
   border-color: var(--color-primary-hover);
   color: var(--color-text-inverse);
 }
-
-/* ------------------------------------------------------------
-   9. Componentes del Design System (muestras)
-   ------------------------------------------------------------ */
 
 .swatch {
   border: var(--border-base);

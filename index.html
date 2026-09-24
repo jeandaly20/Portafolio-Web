@@ -11,7 +11,6 @@
     <meta name="author" content="Jean Carlos Suárez" />
     <meta name="theme-color" content="#4f46e5" />
 
-    <!-- Open Graph: vista previa al compartir el enlace -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Jean Carlos Suárez — Portafolio" />
     <meta
@@ -22,7 +21,6 @@
 
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
 
-    <!-- Tipografía -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,13 +28,11 @@
       rel="stylesheet"
     />
 
-    <!-- Hojas de estilo: tokens → base → componentes → layout -->
     <link rel="stylesheet" href="css/tokens.css" />
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/components.css" />
     <link rel="stylesheet" href="css/layout.css" />
 
-    <!-- Aplica el tema guardado antes de pintar, para evitar parpadeo -->
     <script>
       (function () {
         try {
@@ -46,9 +42,7 @@
           } else {
             document.documentElement.removeAttribute("data-theme");
           }
-        } catch (error) {
-          /* localStorage no disponible: se usa el tema del sistema */
-        }
+        } catch (error) {}
       })();
     </script>
   </head>
@@ -56,9 +50,6 @@
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
 
-    <!-- =====================================================
-         HEADER + NAVEGACIÓN
-         ===================================================== -->
     <header class="site-header">
       <div class="container">
         <div class="navbar">
@@ -112,9 +103,7 @@
     </header>
 
     <main id="contenido">
-      <!-- =====================================================
-           1. INICIO / PRESENTACIÓN
-           ===================================================== -->
+
       <section class="hero" id="inicio" aria-labelledby="hero-titulo">
         <div class="container">
           <div class="hero__inner">
@@ -171,7 +160,6 @@
             </figure>
           </div>
 
-          <!-- Métricas rápidas -->
           <dl class="stats">
             <div class="stats__item">
               <dt class="stats__label">Semestre en curso</dt>
@@ -189,9 +177,6 @@
         </div>
       </section>
 
-      <!-- =====================================================
-           2. SOBRE MÍ
-           ===================================================== -->
       <section class="section section--alt" id="sobre-mi" aria-labelledby="sobre-mi-titulo">
         <div class="container">
           <header class="section__header">
@@ -295,9 +280,6 @@
         </div>
       </section>
 
-      <!-- =====================================================
-           3. SKILLS / HABILIDADES
-           ===================================================== -->
       <section class="section" id="skills" aria-labelledby="skills-titulo">
         <div class="container">
           <header class="section__header">
@@ -309,7 +291,6 @@
             </p>
           </header>
 
-          <!-- Frontend -->
           <article class="skills-group">
             <h3 class="skills-group__title">
               Frontend <span class="skills-group__count">5 tecnologías</span>
@@ -368,7 +349,6 @@
             </ul>
           </article>
 
-          <!-- Backend -->
           <article class="skills-group">
             <h3 class="skills-group__title">
               Backend <span class="skills-group__count">4 tecnologías</span>
@@ -407,7 +387,6 @@
             </ul>
           </article>
 
-          <!-- Bases de datos -->
           <article class="skills-group">
             <h3 class="skills-group__title">
               Bases de datos <span class="skills-group__count">3 tecnologías</span>
@@ -446,7 +425,6 @@
             </ul>
           </article>
 
-          <!-- Herramientas y otros -->
           <article class="skills-group">
             <h3 class="skills-group__title">
               Herramientas, cloud y diseño <span class="skills-group__count">5 tecnologías</span>
@@ -507,9 +485,6 @@
         </div>
       </section>
 
-      <!-- =====================================================
-           4. PROYECTOS DESTACADOS
-           ===================================================== -->
       <section class="section section--alt" id="proyectos" aria-labelledby="proyectos-titulo">
         <div class="container">
           <header class="section__header">
@@ -521,7 +496,6 @@
             </p>
           </header>
 
-          <!-- Filtro por tecnología (JavaScript) -->
           <div class="filters" id="filtros-proyectos" role="group" aria-label="Filtrar proyectos por tecnología">
             <button class="filter-chip" type="button" data-filter="all" aria-pressed="true">Todos</button>
             <button class="filter-chip" type="button" data-filter="javascript" aria-pressed="false">JavaScript</button>
@@ -532,8 +506,8 @@
           </div>
 
           <div class="projects-grid" id="grid-proyectos">
-            <!-- Proyecto 1 -->
-            <article class="card project-card" data-tech="java sql">
+
+            <article class="card project-card reveal" data-tech="java sql">
               <figure class="card__media">
                 <img
                   src="assets/img/proyecto-inventario.svg"
@@ -567,7 +541,6 @@
                 </footer>
               </div>
 
-              <!-- Contenido ampliado que muestra el modal -->
               <template id="detalle-inventario">
                 <h3>Sistema de Gestión de Inventario</h3>
                 <p class="text-muted">Proyecto académico · 2024 · Equipo de 3 personas</p>
@@ -592,8 +565,7 @@
               </template>
             </article>
 
-            <!-- Proyecto 2 -->
-            <article class="card project-card" data-tech="javascript react">
+            <article class="card project-card reveal" data-tech="javascript react">
               <figure class="card__media">
                 <img
                   src="assets/img/proyecto-finanzas.svg"
@@ -653,8 +625,7 @@
               </template>
             </article>
 
-            <!-- Proyecto 3 -->
-            <article class="card project-card" data-tech="python sql">
+            <article class="card project-card reveal" data-tech="python sql">
               <figure class="card__media">
                 <img
                   src="assets/img/proyecto-api.svg"
@@ -713,8 +684,7 @@
               </template>
             </article>
 
-            <!-- Proyecto 4 -->
-            <article class="card project-card" data-tech="javascript">
+            <article class="card project-card reveal" data-tech="javascript">
               <figure class="card__media">
                 <img
                   src="assets/img/proyecto-portafolio.svg"
@@ -776,9 +746,6 @@
         </div>
       </section>
 
-      <!-- =====================================================
-           5. CONTACTO
-           ===================================================== -->
       <section class="section" id="contacto" aria-labelledby="contacto-titulo">
         <div class="container">
           <header class="section__header">
@@ -830,7 +797,6 @@
             <div class="contact__form-wrapper">
               <h3>Envíame un mensaje</h3>
 
-              <!-- novalidate: la validación se controla desde JavaScript -->
               <form class="form" id="form-contacto" novalidate>
                 <div class="form__row">
                   <div class="field">
@@ -905,7 +871,6 @@
 
                 <button class="btn btn--primary btn--block" type="submit">Enviar mensaje</button>
 
-                <!-- Región viva: los lectores de pantalla anuncian el resultado -->
                 <p class="form__status" id="estado-formulario" role="status" aria-live="polite"></p>
               </form>
             </div>
@@ -914,9 +879,6 @@
       </section>
     </main>
 
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
     <footer class="site-footer">
       <div class="container site-footer__inner">
         <p style="margin: 0">
@@ -930,9 +892,6 @@
       </div>
     </footer>
 
-    <!-- =====================================================
-         MODAL (detalle de proyecto) — reutilizable
-         ===================================================== -->
     <div class="modal" id="modal-proyecto" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
       <div class="modal__dialog">
         <button class="btn-icon modal__close" type="button" id="modal-close" aria-label="Cerrar ventana de detalle">
@@ -945,12 +904,12 @@
       </div>
     </div>
 
-    <!-- Botón volver arriba -->
     <button class="btn-icon back-to-top" type="button" id="back-to-top" aria-label="Volver al inicio de la página">
       <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M12 19V5M5 12l7-7 7 7" />
       </svg>
     </button>
 
+    <script src="js/main.js" defer></script>
   </body>
 </html>

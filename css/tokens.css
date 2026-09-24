@@ -1,44 +1,33 @@
-/* ============================================================
-   TOKENS — Design tokens del proyecto (CSS Custom Properties)
-   Todas las decisiones visuales viven aquí. Los componentes
-   NUNCA deben usar valores "mágicos": siempre var(--token).
-   ============================================================ */
-
 :root {
-  /* ---------- Color: marca ---------- */
   --color-primary: #4f46e5;
   --color-primary-hover: #4338ca;
   --color-primary-soft: #eef2ff;
   --color-secondary: #0d9488;
   --color-secondary-soft: #ecfdf5;
 
-  /* ---------- Color: superficies ---------- */
   --color-background: #ffffff;
   --color-surface: #f7f7f9;
   --color-surface-alt: #ffffff;
   --color-border: #e4e4e9;
   --color-overlay: rgb(15 15 20 / 0.55);
 
-  /* ---------- Color: texto ---------- */
   --color-text: #111116;
   --color-text-muted: #64646f;
   --color-text-inverse: #ffffff;
 
-  /* ---------- Color: estado ---------- */
   --color-success: #15803d;
   --color-success-soft: #dcfce7;
   --color-error: #dc2626;
   --color-error-soft: #fee2e2;
   --color-focus: #4f46e5;
 
-  /* ---------- Tipografía ---------- */
   --font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-mono: "JetBrains Mono", "Cascadia Code", Consolas, "Courier New", monospace;
 
-  --text-xs: 0.75rem;    /* 12px */
-  --text-sm: 0.875rem;   /* 14px */
-  --text-base: 1rem;     /* 16px */
-  --text-lg: 1.125rem;   /* 18px */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
   --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
   --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
   --text-3xl: clamp(1.875rem, 1.5rem + 1.8vw, 2.75rem);
@@ -56,18 +45,16 @@
   --tracking-tight: -0.02em;
   --tracking-wide: 0.08em;
 
-  /* ---------- Espaciado (escala base 4px) ---------- */
-  --space-3xs: 0.25rem;  /* 4px  */
-  --space-2xs: 0.5rem;   /* 8px  */
-  --space-xs: 0.75rem;   /* 12px */
-  --space-sm: 1rem;      /* 16px */
-  --space-md: 1.5rem;    /* 24px */
-  --space-lg: 2rem;      /* 32px */
-  --space-xl: 3rem;      /* 48px */
-  --space-2xl: 4.5rem;   /* 72px */
-  --space-3xl: 7rem;     /* 112px */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 7rem;
 
-  /* ---------- Bordes y radios ---------- */
   --border-width: 1px;
   --border-base: var(--border-width) solid var(--color-border);
   --radius-sm: 0.375rem;
@@ -75,35 +62,25 @@
   --radius-lg: 1.25rem;
   --radius-pill: 999px;
 
-  /* ---------- Sombras ---------- */
   --shadow-sm: 0 1px 2px rgb(15 15 20 / 0.06);
   --shadow-card: 0 4px 16px rgb(15 15 20 / 0.08);
   --shadow-lg: 0 18px 40px rgb(15 15 20 / 0.14);
   --shadow-focus: 0 0 0 3px rgb(79 70 229 / 0.35);
 
-  /* ---------- Medidas / layout ---------- */
-  --container-max: 72rem;   /* 1152px */
+  --container-max: 72rem;
   --container-narrow: 46rem;
-  --measure: 65ch;          /* ancho de lectura cómodo */
+  --measure: 65ch;
   --header-height: 4rem;
   --icon-size: 1.25rem;
 
-  /* ---------- Movimiento ---------- */
   --transition-fast: 120ms ease;
   --transition-base: 220ms ease;
   --transition-slow: 420ms cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* ---------- Capas ---------- */
   --z-header: 100;
   --z-overlay: 200;
   --z-modal: 300;
 }
-
-/* ============================================================
-   TEMA OSCURO
-   1) Si el sistema está en oscuro y el usuario no forzó claro.
-   2) Si el usuario eligió explícitamente el tema oscuro.
-   ============================================================ */
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {

@@ -1,7 +1,3 @@
-/* ============================================================
-   BASE — Reset ligero, tipografía global y utilidades
-   ============================================================ */
-
 *,
 *::before,
 *::after {
@@ -26,8 +22,6 @@ body {
   overflow-x: hidden;
   transition: background-color var(--transition-base), color var(--transition-base);
 }
-
-/* ---------- Tipografía ---------- */
 
 h1,
 h2,
@@ -81,8 +75,6 @@ code {
   padding: 0.1em 0.4em;
 }
 
-/* ---------- Enlaces ---------- */
-
 a {
   color: var(--color-primary);
   text-decoration-thickness: 1px;
@@ -94,8 +86,6 @@ a:hover {
   color: var(--color-primary-hover);
 }
 
-/* ---------- Listas ---------- */
-
 ul,
 ol {
   margin: 0 0 var(--space-sm);
@@ -105,8 +95,6 @@ ol {
 li {
   margin-bottom: var(--space-3xs);
 }
-
-/* ---------- Multimedia ---------- */
 
 img,
 svg,
@@ -131,8 +119,6 @@ hr {
   border-top: var(--border-base);
   margin: var(--space-xl) 0;
 }
-
-/* ---------- Foco visible y accesibilidad ---------- */
 
 :focus-visible {
   outline: 2px solid var(--color-focus);
@@ -169,8 +155,6 @@ hr {
   white-space: nowrap;
   border: 0;
 }
-
-/* ---------- Utilidades de layout ---------- */
 
 .container {
   width: min(100% - (var(--space-md) * 2), var(--container-max));
@@ -209,8 +193,6 @@ hr {
   color: var(--color-text-muted);
 }
 
-/* ---------- Animación de aparición (controlada por JS) ---------- */
-
 .reveal {
   opacity: 0;
   transform: translateY(1.25rem);
@@ -222,7 +204,6 @@ hr {
   transform: none;
 }
 
-/* Respeta la preferencia de menos movimiento del sistema operativo */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
