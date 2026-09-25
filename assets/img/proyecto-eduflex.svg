@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Panel de un niño en EduFlex con cámara activa, barra de progreso y avatar personalizable">
+  <rect width="800" height="500" fill="#0f172a" />
+
+  <rect x="40" y="36" width="720" height="428" rx="16" fill="#111827" stroke="#1f2937" stroke-width="2" />
+  <rect x="40" y="36" width="720" height="44" rx="16" fill="#1f2937" />
+  <rect x="40" y="64" width="720" height="16" fill="#1f2937" />
+  <g fill="#4b5563">
+    <circle cx="68" cy="58" r="5" />
+    <circle cx="86" cy="58" r="5" />
+    <circle cx="104" cy="58" r="5" />
+  </g>
+  <rect x="132" y="50" width="200" height="16" rx="8" fill="#374151" />
+
+  <!-- Barra lateral -->
+  <rect x="72" y="106" width="128" height="314" rx="14" fill="#1f2937" />
+  <rect x="92" y="132" width="88" height="60" rx="10" fill="#4338ca" />
+  <rect x="92" y="206" width="88" height="60" rx="10" fill="#312e81" />
+  <rect x="92" y="280" width="88" height="60" rx="10" fill="#312e81" />
+
+  <!-- Tarjeta de progreso -->
+  <rect x="220" y="106" width="240" height="130" rx="12" fill="#1f2937" />
+  <rect x="240" y="126" width="110" height="12" rx="6" fill="#a5b4fc" />
+  <rect x="240" y="168" width="200" height="14" rx="7" fill="#374151" />
+  <rect x="240" y="168" width="120" height="14" rx="7" fill="#16a34a" />
+  <rect x="240" y="200" width="150" height="10" rx="5" fill="#4b5563" />
+
+  <!-- Tarjeta de cámara / detección -->
+  <rect x="476" y="106" width="252" height="130" rx="12" fill="#1f2937" />
+  <circle cx="540" cy="171" r="34" fill="#374151" />
+  <circle cx="528" cy="163" r="4.5" fill="#0f172a" />
+  <circle cx="552" cy="163" r="4.5" fill="#0f172a" />
+  <path d="M522 182 Q540 194 558 182" stroke="#0f172a" stroke-width="3.5" fill="none" stroke-linecap="round" />
+  <circle cx="565" cy="140" r="6" fill="#dc2626" />
+  <rect x="590" y="128" width="118" height="10" rx="5" fill="#4b5563" />
+  <rect x="590" y="150" width="118" height="10" rx="5" fill="#4b5563" />
+  <rect x="590" y="172" width="90" height="10" rx="5" fill="#2dd4bf" />
+
+  <!-- Avatar personalizable -->
+  <rect x="220" y="254" width="508" height="150" rx="12" fill="#1f2937" />
+  <rect x="240" y="274" width="150" height="12" rx="6" fill="#a5b4fc" />
+
+  <g transform="translate(300,300)">
+    <circle cx="0" cy="0" r="28" fill="#fde68a" />
+    <circle cx="-9" cy="-2" r="3.2" fill="#0f172a" />
+    <circle cx="9" cy="-2" r="3.2" fill="#0f172a" />
+    <path d="M-10 10 Q0 18 10 10" stroke="#0f172a" stroke-width="3" fill="none" stroke-linecap="round" />
+    <rect x="-26" y="26" width="52" height="46" rx="16" fill="#f97316" />
+    <rect x="-20" y="72" width="16" height="30" rx="7" fill="#312e81" />
+    <rect x="4" y="72" width="16" height="30" rx="7" fill="#312e81" />
+  </g>
+
+  <rect x="380" y="288" width="300" height="16" rx="8" fill="#374151" />
+  <rect x="380" y="288" width="70" height="16" rx="8" fill="#16a34a" />
+  <rect x="380" y="316" width="300" height="16" rx="8" fill="#374151" />
+  <rect x="380" y="316" width="70" height="16" rx="8" fill="#4338ca" />
+  <rect x="380" y="344" width="300" height="16" rx="8" fill="#374151" />
+  <rect x="380" y="344" width="70" height="16" rx="8" fill="#dc2626" />
+  <rect x="380" y="372" width="220" height="10" rx="5" fill="#4b5563" />
+</svg>

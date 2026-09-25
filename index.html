@@ -753,6 +753,72 @@
                 </ul>
               </template>
             </article>
+
+            <article class="card project-card reveal" data-tech="python javascript sql">
+              <figure class="card__media">
+                <img
+                  src="assets/img/proyecto-eduflex.svg"
+                  alt="Panel de un niño en EduFlex con cámara activa, barra de progreso y avatar personalizable"
+                  width="800"
+                  height="500"
+                  loading="lazy"
+                />
+              </figure>
+              <div class="card__body">
+                <h3 class="card__title">EduFlex</h3>
+                <p class="card__text">
+                  Plataforma web que usa la cámara del navegador y un modelo de visión por
+                  computador para detectar somnolencia y distracción en niños con dificultades de
+                  aprendizaje mientras juegan, con reportes para profesores.
+                </p>
+                <ul class="badge-list">
+                  <li><span class="badge">Django</span></li>
+                  <li><span class="badge">PostgreSQL</span></li>
+                  <li><span class="badge">MediaPipe</span></li>
+                  <li><span class="badge">Cloudinary</span></li>
+                  <li><span class="badge">JavaScript</span></li>
+                </ul>
+                <footer class="card__footer">
+                  <button class="btn btn--secondary" type="button" data-modal-target="detalle-eduflex">
+                    Ver detalles
+                  </button>
+                  <a class="btn btn--ghost" href="https://github.com/jeandaly20/Eduflex" target="_blank" rel="noopener">
+                    Repositorio
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" />
+                    </svg>
+                  </a>
+                </footer>
+              </div>
+
+              <template id="detalle-eduflex">
+                <h3>EduFlex</h3>
+                <p class="text-muted">Proyecto de titulación · 2026 · Equipo de 3 personas</p>
+                <h4>Problema que resuelve</h4>
+                <p>
+                  Los niños con dificultades de aprendizaje suelen perder la atención durante las
+                  actividades escolares sin que el profesor lo note a tiempo. EduFlex observa al
+                  niño mientras juega y genera reportes objetivos de sus momentos de somnolencia o
+                  distracción para que el profesor pueda intervenir.
+                </p>
+                <h4>Mi aporte</h4>
+                <p>
+                  Rediseñé el pipeline de detección para que capture frames desde la cámara del
+                  navegador en vez de depender de una webcam en el servidor, migré el
+                  almacenamiento de evidencia a Cloudinary con URLs firmadas privadas, y construí
+                  los paneles de niño y profesor, incluyendo un sistema de avatar personalizable
+                  que el niño desbloquea con su progreso.
+                </p>
+                <h4>Tecnologías</h4>
+                <ul class="badge-list">
+                  <li><span class="badge badge--primary">Django</span></li>
+                  <li><span class="badge badge--primary">PostgreSQL</span></li>
+                  <li><span class="badge badge--primary">MediaPipe</span></li>
+                  <li><span class="badge badge--primary">Cloudinary</span></li>
+                  <li><span class="badge badge--primary">JavaScript</span></li>
+                </ul>
+              </template>
+            </article>
           </div>
 
           <p class="projects__empty" id="proyectos-vacio" hidden>
