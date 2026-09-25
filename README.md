@@ -49,7 +49,7 @@ El objetivo técnico del proyecto es demostrar:
 |---|---|---|
 | Inicio / Presentación | `index.html#inicio` | Nombre, perfil profesional, fotografía, accesos directos y métricas |
 | Sobre mí | `index.html#sobre-mi` | Descripción profesional, formación e intereses académicos |
-| Habilidades | `index.html#skills` | 19 tecnologías agrupadas en Frontend, Backend y APIs, IA y visión por computador, Bases de datos y Herramientas |
+| Habilidades | `index.html#skills` | 13 tecnologías agrupadas en Frontend, Backend, IA y visión por computador, Bases de datos y Herramientas |
 | Proyectos | `index.html#proyectos` | 3 proyectos con filtro por tecnología y modal de detalle |
 | Design System | `design-system.html` | Colores, tipografía, espaciado, radios, sombras y componentes |
 | Contacto | `index.html#contacto` | Datos de contacto y formulario validado |
