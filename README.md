@@ -49,8 +49,8 @@ El objetivo técnico del proyecto es demostrar:
 |---|---|---|
 | Inicio / Presentación | `index.html#inicio` | Nombre, perfil profesional, fotografía, accesos directos y métricas |
 | Sobre mí | `index.html#sobre-mi` | Descripción profesional, formación e intereses académicos |
-| Habilidades | `index.html#skills` | 17 tecnologías agrupadas en Frontend, Backend, Bases de datos y Herramientas |
-| Proyectos | `index.html#proyectos` | 4 proyectos con filtro por tecnología y modal de detalle |
+| Habilidades | `index.html#skills` | 19 tecnologías agrupadas en Frontend, Backend y APIs, IA y visión por computador, Bases de datos y Herramientas |
+| Proyectos | `index.html#proyectos` | 3 proyectos con filtro por tecnología y modal de detalle |
 | Design System | `design-system.html` | Colores, tipografía, espaciado, radios, sombras y componentes |
 | Contacto | `index.html#contacto` | Datos de contacto y formulario validado |
 
@@ -94,10 +94,9 @@ Portafolio-Web/
     └── img/
         ├── favicon.svg
         ├── jean-suarez.webp
-        ├── proyecto-inventario.svg
-        ├── proyecto-finanzas.svg
-        ├── proyecto-api.svg
-        └── proyecto-portafolio.svg
+        ├── proyecto-barberia.webp
+        ├── proyecto-danos-cnn.webp
+        └── proyecto-eduflex.webp
 ```
 
 El CSS se carga siempre en este orden: **tokens → base → components → layout**, de lo general a lo
