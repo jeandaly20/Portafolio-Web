@@ -14,6 +14,7 @@ Portafolio personal e interactivo desarrollado con **HTML5 semántico, CSS puro 
 
 - [Descripción](#descripción)
 - [Secciones del sitio](#secciones-del-sitio)
+- [Proyectos incluidos](#proyectos-incluidos)
 - [Tecnologías](#tecnologías)
 - [Estructura del proyecto](#estructura-del-proyecto)
 - [Sistema de diseño](#sistema-de-diseño)
@@ -54,6 +55,18 @@ El objetivo técnico del proyecto es demostrar:
 | Proyectos | `index.html#proyectos` | 3 proyectos con filtro por tecnología y modal de detalle |
 | Design System | `design-system.html` | Colores, tipografía, espaciado, radios, sombras y componentes |
 | Contacto | `index.html#contacto` | Datos de contacto y formulario validado |
+
+---
+
+## Proyectos incluidos
+
+Los tres están desplegados y se pueden abrir desde el portafolio:
+
+| Proyecto | Qué resuelve | Stack principal | Enlaces |
+|---|---|---|---|
+| **Jean Barber Atelier** | Sistema de reservas en producción para una barbería: agenda en tiempo real, pago con PayPal, recordatorios por correo y política de no-show. | Django · DRF · PostgreSQL · Supabase · Tailwind · Docker | [Demo](https://barberia-tv7n.onrender.com) · [Código](https://github.com/jeandaly20/BARBERIA) |
+| **Detector de Daños Estructurales con IA** | Analiza la foto de una pared con cuatro redes neuronales convolucionales para detectar grietas, humedad y otros daños. | Flask · TensorFlow/Keras · NumPy · Pillow · Docker | [Demo](https://deteccion-de-da-os-estructurales.onrender.com) · [Código](https://github.com/jeandaly20/Deteccion-de-da-os-Estructurales) |
+| **EduFlex** | Plataforma que usa la cámara del navegador y visión por computador para detectar somnolencia y distracción en niños con dificultades de aprendizaje, con reportes para profesores. | Django · PostgreSQL · MediaPipe · OpenCV · Cloudinary | [Demo](https://eduflex-1-387h.onrender.com) · [Código](https://github.com/jeandaly20/Eduflex) |
 
 ---
 
@@ -226,6 +239,10 @@ En uno o dos minutos el sitio queda disponible en `https://jeandaly20.github.io/
 | Claro | Oscuro |
 |---|---|
 | ![Portada del portafolio en tema claro](assets/img/captura-inicio-claro.png) | ![Portada del portafolio en tema oscuro](assets/img/captura-inicio-oscuro.png) |
+
+**Sobre mí** — perfil, datos rápidos y la línea de tiempo de formación
+
+![Sección Sobre mí con el perfil profesional, la tarjeta de datos rápidos y la línea de tiempo de 2022 a 2026](assets/img/captura-sobre-mi.png)
 
 **Habilidades técnicas** — agrupadas por categoría, con nivel de dominio
 
