@@ -23,6 +23,7 @@ Portafolio personal e interactivo desarrollado con **HTML5 semántico, CSS puro 
 - [Fases de implementación](#fases-de-implementación)
 - [Publicación en GitHub Pages](#publicación-en-github-pages)
 - [Capturas](#capturas)
+- [Verificación en ventana de incógnito](#verificación-en-ventana-de-incógnito)
 - [Checklist de entrega](#checklist-de-entrega)
 
 ---
@@ -244,6 +245,16 @@ En uno o dos minutos el sitio queda disponible en `https://jeandaly20.github.io/
 
 ---
 
+## Verificación en ventana de incógnito
+
+El sitio se comprobó el **25 de septiembre de 2026** en una ventana de incógnito, sin sesión
+iniciada y sin caché previa, para confirmar que es accesible públicamente desde cualquier
+dispositivo y que no depende del entorno local:
+
+![El portafolio abierto en una ventana de incógnito, con la URL jeandaly20.github.io/Portafolio-Web visible en la barra de direcciones](assets/img/captura-incognito.png)
+
+---
+
 ## Checklist de entrega
 
 - [x] HTML5 semántico y jerarquía correcta de encabezados
@@ -257,7 +268,7 @@ En uno o dos minutos el sitio queda disponible en `https://jeandaly20.github.io/
 - [x] Mínimo 3 funcionalidades JavaScript (hay 9)
 - [x] Repositorio público en GitHub con commits incrementales
 - [x] Publicado en GitHub Pages
-- [ ] Verificado en ventana de incógnito
+- [x] Verificado en ventana de incógnito
 - [x] Capturas reales añadidas al README
 
 ---
