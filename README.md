@@ -96,7 +96,8 @@ Portafolio-Web/
         ├── jean-suarez.webp
         ├── proyecto-barberia.webp
         ├── proyecto-danos-cnn.webp
-        └── proyecto-eduflex.webp
+        ├── proyecto-eduflex.webp
+        └── captura-*.png          # Capturas usadas en este README
 ```
 
 El CSS se carga siempre en este orden: **tokens → base → components → layout**, de lo general a lo
@@ -219,15 +220,27 @@ En uno o dos minutos el sitio queda disponible en `https://jeandaly20.github.io/
 
 ## Capturas
 
-> Reemplaza estas líneas por capturas reales (`assets/img/captura-*.png`) antes de entregar.
+**Inicio — tema claro y tema oscuro**
 
-| Inicio (tema claro) | Inicio (tema oscuro) |
+| Claro | Oscuro |
 |---|---|
-| _pendiente_ | _pendiente_ |
+| ![Portada del portafolio en tema claro](assets/img/captura-inicio-claro.png) | ![Portada del portafolio en tema oscuro](assets/img/captura-inicio-oscuro.png) |
 
-| Proyectos con filtro | Design System | Vista móvil |
-|---|---|---|
-| _pendiente_ | _pendiente_ | _pendiente_ |
+**Habilidades técnicas** — agrupadas por categoría, con nivel de dominio
+
+![Sección de habilidades agrupadas en Frontend, Backend, IA y visión por computador, Bases de datos y Herramientas](assets/img/captura-skills.png)
+
+**Proyectos** — filtros por tecnología y tarjetas reutilizables
+
+![Sección de proyectos con los filtros y las tres tarjetas](assets/img/captura-proyectos.png)
+
+**Design System** — la documentación de los tokens
+
+![Página de Design System mostrando la paleta de colores y sus variables CSS](assets/img/captura-design-system.png)
+
+**Vista móvil** — 390 px, con el menú desplegable
+
+![El portafolio en un ancho de teléfono, con el botón de menú hamburguesa](assets/img/captura-movil.png)
 
 ---
 
@@ -243,8 +256,9 @@ En uno o dos minutos el sitio queda disponible en `https://jeandaly20.github.io/
 - [x] Diseño responsive (escritorio, tablet y móvil)
 - [x] Mínimo 3 funcionalidades JavaScript (hay 9)
 - [x] Repositorio público en GitHub con commits incrementales
-- [ ] Publicado en GitHub Pages y verificado en ventana de incógnito
-- [ ] Capturas reales añadidas al README
+- [x] Publicado en GitHub Pages
+- [ ] Verificado en ventana de incógnito
+- [x] Capturas reales añadidas al README
 
 ---
 
